@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lavensia Florist — Toko Bunga Depok | Flower Shop Depok</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --cream:#FAF7F2;--cream2:#F3EDE3;
+  --rose:#C4806A;--rose-dark:#9E5E4A;--rose-light:#F2D9CE;--rose-pale:#FBF0EB;
+  --sage:#8A9E84;--sage-light:#EDF2EB;
+  --text:#2C2420;--text-mid:#6B5A53;--text-light:#A8968E;
+  --border:rgba(196,128,106,0.16);--border2:rgba(196,128,106,0.28);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,242,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6vw;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em;}
+.nav-logo span{color:var(--rose);}
+.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
+.nav-links a:hover{color:var(--rose);}
+.nav-wa{background:var(--rose);color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;}
+.nav-wa:hover{background:var(--rose-dark);transform:scale(1.03);}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 24px 64px;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 38%,var(--rose-light) 0%,transparent 65%),radial-gradient(ellipse 45% 38% at 82% 78%,var(--sage-light) 0%,transparent 60%);opacity:.5;}
+.petal-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.petal{position:absolute;border-radius:50% 0 50% 0;opacity:0;animation:pfall linear infinite;}
+@keyframes pfall{0%{opacity:0;transform:translateY(-30px) rotate(0)}10%{opacity:.55}90%{opacity:.2}100%{opacity:0;transform:translateY(105vh) rotate(400deg)}}
+.hero-tag{font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--rose);text-transform:uppercase;margin-bottom:18px;animation:up .8s ease both;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,96px);font-weight:500;line-height:1;color:var(--text);margin-bottom:22px;animation:up .8s .1s ease both;}
+.hero h1 em{color:var(--rose);font-style:italic;}
+.hero p{font-size:16px;color:var(--text-mid);max-width:440px;line-height:1.75;margin:0 auto 36px;animation:up .8s .2s ease both;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;animation:up .8s .3s ease both;}
+.btn-primary{background:var(--rose);color:#fff;padding:14px 30px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 6px 24px rgba(196,128,106,.35);transition:background .2s,transform .15s;}
+.btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid var(--border2);color:var(--text-mid);padding:13px 28px;border-radius:100px;font-size:14px;text-decoration:none;background:rgba(255,255,255,.7);transition:all .2s;}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);background:#fff;}
+.hero-note{margin-top:50px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.8);border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:12px;color:var(--text-mid);animation:up .8s .45s ease both;}
+.hero-note .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTION */
+section{padding:80px 6vw;}
+.stag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.15em;color:var(--rose);text-transform:uppercase;margin-bottom:12px;}
+.stag::before{content:'';display:block;width:22px;height:1px;background:var(--rose);}
+.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.15;color:var(--text);margin-bottom:10px;}
+.stitle em{font-style:italic;color:var(--rose);}
+.ssub{font-size:14px;color:var(--text-mid);max-width:480px;line-height:1.7;}
+
+/* KATALOG */
+#katalog{background:#fff;}
+.katalog-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:44px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;}
+.card{border-radius:20px;overflow:hidden;background:var(--cream);border:1px solid var(--border);transition:transform .3s,box-shadow .3s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(196,128,106,.16);}
+
+/* SLIDER */
+.slider{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--cream2);user-select:none;}
+.slides{display:flex;height:100%;width:100%;transition:transform .38s cubic-bezier(.4,0,.2,1);will-change:transform;flex-wrap:nowrap;}
+.slide{min-width:100%;width:100%;height:100%;flex-shrink:0;flex-grow:0;}
+.slide img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;pointer-events:none;}
+.slider-btn{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.88);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;color:var(--text);z-index:4;
+  box-shadow:0 2px 10px rgba(0,0,0,.15);
+  transition:opacity .2s,background .15s;opacity:0;
+  }
+.card:hover .slider-btn{opacity:1;}
+.slider-btn:hover{background:#fff;}
+.slider-btn.prev{left:9px;}
+.slider-btn.next{right:9px;}
+.slider-dots{position:absolute;bottom:9px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:4;}
+.sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}
+.sdot.active{background:#fff;transform:scale(1.25);}
+.slide-count{position:absolute;top:9px;right:10px;background:rgba(0,0,0,.38);color:#fff;font-size:11px;padding:3px 8px;border-radius:100px;z-index:4;pointer-events:none;}
+
+/* CARD BODY */
+.card-body{padding:18px 20px 22px;}
+.card-cat{font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--sage);text-transform:uppercase;margin-bottom:5px;}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text);margin-bottom:5px;}
+.card-desc{font-size:13px;color:var(--text-light);line-height:1.55;margin-bottom:18px;}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.card-price .lbl{font-size:11px;color:var(--text-light);display:block;margin-bottom:1px;}
+.card-price strong{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text);}
+.btn-wa{background:var(--rose);color:#fff;padding:9px 16px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
+.btn-wa:hover{background:var(--rose-dark);transform:scale(1.04);}
+.btn-wa svg{width:13px;height:13px;fill:#fff;flex-shrink:0;}
+
+/* ONGKIR SECTION */
+.ongkir-section{background:var(--text);padding:60px 6vw;}
+.ongkir-inner{max-width:660px;margin:0 auto;text-align:center;}
+.ongkir-icon{font-size:40px;margin-bottom:16px;}
+.ongkir-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:500;color:#fff;line-height:1.2;margin-bottom:10px;}
+.ongkir-title em{font-style:italic;color:var(--rose-light);}
+.ongkir-sub{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:28px;}
+.ongkir-sub1{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:28px;}
+.btn-ongkir{display:inline-flex;align-items:center;gap:10px;background:var(--rose);color:#fff;padding:15px 32px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 6px 24px rgba(196,128,106,.4);transition:background .2s,transform .15s;margin-bottom:22px;}
+.btn-ongkir:hover{background:var(--rose-dark);transform:translateY(-2px);}
+.btn-ongkir svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
+.ongkir-note{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;font-size:13px;color:rgba(255,255,255,.62);line-height:1.65;text-align:left;max-width:500px;}
+.ongkir-note .ni{font-size:17px;flex-shrink:0;margin-top:1px;}
+
+/* LAYANAN */
+#layanan{background:var(--cream);}
+.layanan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:18px;margin-top:38px;}
+.lcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;}
+.lcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(196,128,106,.12);}
+.lcard .icon{font-size:26px;margin-bottom:10px;}
+.lcard .lname{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:5px;}
+.lcard .ldesc{font-size:12px;color:var(--text-light);line-height:1.55;}
+
+/* INFO */
+#info{background:linear-gradient(135deg,var(--rose-pale) 0%,var(--cream2) 55%,var(--sage-light) 100%);}
+.info-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
+.iblock{margin-bottom:24px;}
+.iblock:last-child{margin-bottom:0;}
+.ilabel{font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--rose);text-transform:uppercase;margin-bottom:5px;}
+.ival{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--text);line-height:1.45;}
+.ival a{color:var(--rose);text-decoration:none;}
+.ival a:hover{text-decoration:underline;}
+.info-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:14px;}
+.info-cta h2 em{font-style:italic;color:var(--rose);}
+.info-cta p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:26px;}
+.btn-wa-big{display:inline-flex;align-items:center;gap:10px;background:var(--rose);color:#fff;padding:15px 30px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 8px 28px rgba(196,128,106,.38);transition:background .2s,transform .15s;}
+.btn-wa-big:hover{background:var(--rose-dark);transform:translateY(-2px);}
+.btn-wa-big svg{width:20px;height:20px;fill:#fff;}
+
+/* FOOTER */
+footer{background:var(--text);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:13px;line-height:1.8;}
+footer strong{color:rgba(255,255,255,.9);}
+footer a{color:var(--rose-light);text-decoration:none;}
+
+/* FLOAT WA */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);text-decoration:none;animation:wapulse 2.8s ease infinite;transition:transform .2s;}
+.wa-float:hover{transform:scale(1.12);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+@keyframes wapulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.45)}50%{box-shadow:0 6px 32px rgba(37,211,102,.65),0 0 0 9px rgba(37,211,102,.1)}}
+
+/* FLOAT MUSIC */
+.music-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 20px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+/* LANG TOGGLE */
+.lang-toggle{display:flex;align-items:center;gap:4px;background:var(--cream2);border:1px solid var(--border2);border-radius:100px;padding:3px;margin-right:8px;}
+.lang-btn{padding:4px 10px;border-radius:100px;font-size:12px;font-weight:500;color:var(--text-mid);background:transparent;border:none;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;}
+.lang-btn.active{background:#fff;color:var(--rose);box-shadow:0 1px 4px rgba(0,0,0,.1);}
+
+/* MAPS BUTTON */
+.btn-maps{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(196,128,106,.35);color:var(--rose);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;background:transparent;margin-top:10px;transition:all .2s;}
+.btn-maps:hover{background:var(--rose);color:#fff;border-color:var(--rose);}
+.btn-maps svg{width:14px;height:14px;flex-shrink:0;}
+
+/* BILINGUAL helpers */
+[data-en]{display:block;}
+body.en [data-id]{display:none!important;}
+body.en [data-en]{display:block!important;}
+body:not(.en) [data-en]{display:none!important;}
+body:not(.en) [data-id]{display:block!important;}
+/* inline spans */
+span[data-id],span[data-en]{display:inline;}
+/* for elements that should show inline when active */
+.nav-links a span[data-id], .nav-links a span[data-en]{display:inline;}
+
+@media(max-width:768px){.nav-links{display:none;}.info-wrap{grid-template-columns:1fr;}.grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lavensia <span>Florist</span></div>
+  <ul class="nav-links">
+    <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
+    <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
+    <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
+    <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
+	<li><a href="#btn-maps"><span data-id>Lokasi</span><span data-en>Location</span></a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <a class="nav-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><span data-id>Order WA</span><span data-en>Order WA</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="petal-wrap" id="petals"></div>
+  <p class="hero-tag"><span data-id>Toko Bunga Depok</span><span data-en>Flower Shop · Depok, Indonesia</span></p>
+  <h1><span data-id>Bunga untuk<br/><em>setiap momen</em></span><span data-en>Flowers for<br/><em>every moment</em></span></h1>
+  <p>
+    <span data-id>Fresh bouquet, bloombox, money bouquet, balloon box & custom — semua bisa kamu pesan langsung via WhatsApp.</span>
+    <span data-en>Fresh bouquets, bloom boxes, money bouquets, balloon boxes & custom arrangements — order directly via WhatsApp.</span>
+  </p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank">
+      <span data-id>🌸 Pesan Sekarang </span><span data-en>🌸 Order Now</span>
+    </a>
+    <a class="btn-ghost" href="#katalog">
+      <span data-id>Lihat Katalog</span><span data-en>View Catalog</span>
+    </a>
+	<a class="btn-primary" href="https://www.instagram.com/lavensia.florist/" target="_blank">
+      <span data-id>Lihat Instagram 🌸</span><span data-en>View Instagram 🌸</span>
+    </a>
+  </div>
+  <div class="hero-note">
+    <div class="dot"></div>
+    <span data-id>Buka Senin–Sabtu · 08.00–17.00 WIB</span>
+    <span data-en>Open Mon–Sat · 08:00–17:00 WIB</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     KATALOG PRODUK
+
+     CARA GANTI / TAMBAH FOTO PER PRODUK:
+     - Setiap produk punya array foto di data-images='[...]'
+     - Isi dengan link dari imgbb.com (Direct link) atau path lokal
+     - Pisahkan dengan koma di dalam array JSON
+     - Contoh lokal  : "foto/produk1a.jpg","foto/produk1b.jpg"
+     - Contoh imgbb  : "https://i.ibb.co/xxx/foto.jpg"
+     - Minimal 1 foto, bisa sampai sebanyak yang kamu mau
+     ══════════════════════════════════════════════════════ -->
+<section id="katalog">
+  <div class="katalog-header">
+    <div>
+      <div class="stag"><span data-id>Katalog Produk</span><span data-en>Our Products</span></div>
+      <h2 class="stitle"><span data-id>Pilihan <em>bunga</em> kami</span><span data-en>Our <em>flower</em> collection</span></h2>
+      <p class="ssub">
+        <span data-id>Geser foto untuk lihat lebih banyak. Klik "Order WA" untuk langsung chat & tanya harga.</span>
+        <span data-en>Swipe photos to see more. Click "Order WA" to chat & ask for pricing.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ═══ PRODUK 1 — HAMPERS ═══
+         Ganti foto: isi array di data-images dengan link foto kamu -->
+    <div class="card" data-images='[
+      "images/g1.jpg","images/g2.jpg","images/g3.jpg"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Hampers</div>
+        <div class="card-name">Hampers Spesial</div>
+        <div class="card-desc">Hampers cantik untuk momen spesial, tersedia berbagai pilihan ukuran & isian.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20tanya%20Hampers%20Spesial%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PRODUK 2 — FRESH BOUQUET ═══ -->
+    <div class="card" data-images='[
+      "images/g4.jpg",
+	  "images/g5.jpg",
+	  "images/g6.jpg"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Fresh Bouquet</div>
+        <div class="card-name">Fresh Bouquet</div>
+        <div class="card-desc">Buket bunga segar pilihan, cocok untuk hadiah ulang tahun, wisuda & anniversary.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20pesan%20Fresh%20Bouquet%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PRODUK 3 — BLOOM BOX ═══ -->
+    <div class="card" data-images='[
+      "https://i.ibb.co.com/vC94RNbT/lavensia-logo-01.jpg",
+	  "https://i.ibb.co.com/7d051FLn/g5.jpg",
+	  "https://i.ibb.co.com/3msT2wLW/g2.jpg",
+	  "https://i.ibb.co.com/C533cFpD/g4.jpg",
+	  "https://i.ibb.co.com/1JKHjBgy/g1.jpg"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Bloombox</div>
+        <div class="card-name">Bloom Box</div>
+        <div class="card-desc">Rangkaian bunga dalam kotak eksklusif, tampil elegan dan berkesan.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20tanya%20Bloom%20Box%20%F0%9F%8C%B7" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PRODUK 4 — MONEY BOUQUET ═══ -->
+    <div class="card" data-images='[
+      "https://placehold.co/600x600/F3EDE3/C4806A?text=Money+Bouquet+1",
+      "https://placehold.co/600x600/EDF2EB/8A9E84?text=Money+Bouquet+2"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Money Bouquet</div>
+        <div class="card-name">Money Bouquet</div>
+        <div class="card-desc">Buket unik dari uang kertas, hadiah yang cantik sekaligus bermanfaat.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20tanya%20Money%20Bouquet%20%F0%9F%92%B5" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PRODUK 5 — BALLOON BOX ═══ -->
+    <div class="card" data-images='[
+      "https://placehold.co/600x600/F3EDE3/C4806A?text=Balloon+Box+1",
+      "https://placehold.co/600x600/EDF2EB/8A9E84?text=Balloon+Box+2"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Balloon Box</div>
+        <div class="card-name">Balloon Box</div>
+        <div class="card-desc">Kombinasi balon dan bunga dalam box, cocok untuk ulang tahun & wisuda.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20tanya%20Balloon%20Box%20%F0%9F%8E%88" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PRODUK 6 — CUSTOM BOUQUET ═══ -->
+    <div class="card" data-images='[
+      "https://placehold.co/600x600/F3EDE3/C4806A?text=Custom+1",
+      "https://placehold.co/600x600/EDF2EB/8A9E84?text=Custom+2",
+      "https://placehold.co/600x600/F2D9CE/9E5E4A?text=Custom+3",
+      "https://placehold.co/600x600/FAF7F2/C4806A?text=Custom+4"
+    ]'>
+      <div class="slider"><div class="slides"></div>
+        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
+        <button class="slider-btn next" aria-label="Next">&#8594;</button>
+        <div class="slider-dots"></div>
+        <div class="slide-count"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-cat">Custom</div>
+        <div class="card-name">Custom Bouquet</div>
+        <div class="card-desc">Request warna, jenis bunga & ukuran sesukamu — kami wujudkan sesuai keinginanmu.</div>
+        <div class="card-foot">
+          <div class="card-price"><span class="lbl">Mulai dari</span><strong>Hubungi Kami</strong></div>
+          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo!%20Saya%20mau%20pesan%20Custom%20Bouquet%20%E2%9C%A8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- CEK ONGKIR -->
+<div class="ongkir-section" id="ongkir">
+  <div class="ongkir-inner">
+    <div class="ongkir-icon">🚚</div>
+    <h2 class="ongkir-title">
+      <span data-id>Mau tahu biaya<br/><em>ongkos kirimnya?</em></span>
+      <span data-en>Want to know your<br/><em>delivery cost?</em></span>
+    </h2>
+	
+    <div class="ongkir-sub">
+      <span data-id>Isi data pengiriman kamu di aplikasi Grab, lalu konfirmasi ke kami via WhatsApp agar kami bantu cek ongkirnya.</span>
+      <span data-en>Fill in your delivery details in the Grab app, then confirm with us via WhatsApp so we can help check the delivery fee.</span>
+    </div>
+
+    <div class="ongkir-sub1">
+      <div class="ostep">
+		<div class="ostep-text">
+          <span data-id><strong>1.</strong> Klik tombol <strong>"Cek Ongkir via Grab"</strong> di bawah dan isi detail pengirimanmu di halaman Grab.</span>
+          <span data-en><strong>1.</strong> Click the <strong>"Check Shipping via Grab"</strong> button below and fill in your delivery details on the Grab page.</span>
+        </div>
+      </div>
+      <div class="ostep">
+        <div class="ostep-text">
+          <span data-id><strong>2. Screenshot</strong> halaman yang menampilkan <strong>"Delivery details have been shared with the sender!"</strong> dari Aplikasi Grab.</span>
+          <span data-en><strong>2. Take a screenshot</strong> The page that displays <strong>“Delivery details have been shared with the sender!”</strong> from the Grab app.</span>
+        </div>
+      </div>
+      <div class="ostep">
+        <div class="ostep-text">
+          <span data-id><strong>3. Kirim screenshot</strong> tersebut ke WhatsApp kami beserta <strong>nama kamu</strong>, agar kami bantu proses pengirimannya.</span>
+          <span data-en><strong>3. Send the screenshot</strong> to our WhatsApp along with <strong>your name</strong>, so we can assist with the delivery.</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
+      <a class="btn-ongkir" href="https://express.grab.com/delivery-link/qsKkfPhS5mwF" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span data-id>Cek Ongkir via Grab</span>
+        <span data-en>Check Shipping via Grab</span>
+      </a>
+      <a class="btn-ongkir" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20sudah%20cek%20ongkir%20di%20Grab%2C%20ini%20screenshot-nya.%20Nama%20saya%3A%20" target="_blank" style="background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.5);">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-id>Kirim Screenshot ke WA</span>
+        <span data-en>Send Screenshot to WA</span>
+      </a>
+	  
+	  <div class="ongkir-note">
+      <span class="ni">📋</span>
+      <span data-id>Setelah mengisi data pengiriman di aplikasi Grab, mohon konfirmasi kepada kami melalui WhatsApp dengan menyebutkan <strong style="color:rgba(255,255,255,.85)">nama kamu</strong>, agar kami dapat membantu mengecek ongkos kirimnya.</span>
+	  <span data-en>After filling in the delivery details in the Grab app, please confirm with us via WhatsApp by mentioning <strong style="color:rgba(255,255,255,.85)">your name</strong> , so we can help check the shipping cost.</span>
+    </div>
+	
+    </div>
+  </div>
+</div>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="stag"><span data-id>Yang kami tawarkan</span><span data-en>What we offer</span></div>
+  <h2 class="stitle"><span data-id>Semua jenis <em>bunga</em> ada di sini</span><span data-en>Every <em>flower</em> you need</span></h2>
+  <div class="layanan-grid">
+    <div class="lcard"><div class="icon">💐</div><div class="lname">Fresh Bouquet</div><div class="ldesc"><span data-id>Buket bunga segar pilihan untuk berbagai momen istimewa.</span><span data-en>Fresh flower bouquets for every special occasion.</span></div></div>
+    <div class="lcard"><div class="icon">🎀</div><div class="lname">Artificial Bouquet</div><div class="ldesc"><span data-id>Bunga artifisial berkualitas, awet dan tidak layu.</span><span data-en>High-quality artificial flowers that last forever.</span></div></div>
+    <div class="lcard"><div class="icon">💵</div><div class="lname">Money Bouquet</div><div class="ldesc"><span data-id>Buket unik dari uang kertas, hadiah cantik sekaligus bermanfaat.</span><span data-en>Unique bouquet made from banknotes — beautiful and useful.</span></div></div>
+    <div class="lcard"><div class="icon">🎁</div><div class="lname">Bloom Box</div><div class="ldesc"><span data-id>Rangkaian bunga dalam box eksklusif, tampil elegan & mewah.</span><span data-en>Elegant flower arrangement in an exclusive box.</span></div></div>
+    <div class="lcard"><div class="icon">🎈</div><div class="lname">Balloon Box</div><div class="ldesc"><span data-id>Kombinasi balon dan bunga dalam box, cocok untuk perayaan.</span><span data-en>Balloon and flower combo in a box, perfect for celebrations.</span></div></div>
+    <div class="lcard"><div class="icon">✨</div><div class="lname">Custom Request</div><div class="ldesc"><span data-id>Warna, jenis bunga, ukuran — semua bisa disesuaikan.</span><span data-en>Color, flower type, size — all fully customizable.</span></div></div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="info">
+  <div class="info-wrap">
+    <div>
+      <div class="stag"><span data-id>Informasi toko</span><span data-en>Store information</span></div>
+      <div class="iblock">
+        <div class="ilabel"><span data-id>Alamat</span><span data-en>Address</span></div>
+        <div class="ival">Jl. Merdeka Raya No.19, Abadijaya<br/>Kec. Sukmajaya, Kota Depok 16417</div>
+        <a class="btn-maps" href="https://maps.app.goo.gl/q4aGJihunSBLZu6q6" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-id>Buka di Google Maps</span><span data-en>Open in Google Maps</span>
+        </a>
+      </div>
+      <div class="iblock">
+        <div class="ilabel"><span data-id>Jam buka</span><span data-en>Opening hours</span></div>
+        <div class="ival"><span data-id>Senin – Sabtu · 08.00 – 17.00 WIB</span><span data-en>Monday – Saturday · 08:00 – 17:00 WIB</span></div>
+      </div>
+      <div class="iblock">
+        <div class="ilabel">WhatsApp</div>
+        <div class="ival"><a href="https://wa.me/6281243043054" target="_blank">+62 812-4304-3054</a></div>
+      </div>
+      <div class="iblock">
+        <div class="ilabel">Instagram</div>
+        <div class="ival"><a href="https://www.instagram.com/lavensia.florist/" target="_blank">@lavensia.florist</a></div>
+      </div>
+    </div>
+    <div class="info-cta">
+      <h2>
+        <span data-id>Siap pesan<br/>bunga <em>impianmu?</em></span>
+        <span data-en>Ready to order<br/>your <em>dream bouquet?</em></span>
+      </h2>
+      <p>
+        <span data-id>Chat kami di WhatsApp — ceritakan momennya dan kami bantu pilihkan bunga yang paling pas.</span>
+        <span data-en>Chat us on WhatsApp — tell us the occasion and we'll help you choose the perfect flowers.</span>
+      </p>
+      <a class="btn-wa-big" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-id>Chat WhatsApp Sekarang</span><span data-en>Chat on WhatsApp Now</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Lavensia Florist</strong><br/>
+  Jl. Merdeka Raya No.19, Abadijaya, Kec. Sukmajaya, Kota Depok 16417<br/>
+  <a href="https://www.instagram.com/lavensia.florist/" target="_blank">@lavensia.florist</a> &nbsp;·&nbsp;
+  <a href="https://wa.me/6281243043054" target="_blank">+62 812-4304-3054</a><br/><br/>
+  <span style="font-size:12px;opacity:.4;">© 2019 Lavensia Florist · Made with 🌸</span>
+</footer>
+
+<!-- FLOATING WA -->
+<a class="wa-float" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank" title="Chat WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- FLOATING MUSIC -->
+<a class="music-float" id="music-btn" onclick="toggleMusic()" title="Play Music">
+  🔇
+</a>
+
+<audio id="bg-music" loop>
+  <source src="lagu1.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<script>
+// ── INIT SLIDERS ──
+document.querySelectorAll('.card[data-images]').forEach(card => {
+  let images;
+  try { images = JSON.parse(card.getAttribute('data-images')); } catch(e) { return; }
+  if (!images.length) return;
+
+  const slidesEl = card.querySelector('.slides');
+  const dotsEl   = card.querySelector('.slider-dots');
+  const countEl  = card.querySelector('.slide-count');
+  const prevBtn  = card.querySelector('.slider-btn.prev');
+  const nextBtn  = card.querySelector('.slider-btn.next');
+  let cur = 0;
+
+  // Build slides & dots
+  images.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'slide';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'Foto produk ' + (i + 1);
+    img.loading = 'lazy';
+    slide.appendChild(img);
+    slidesEl.appendChild(slide);
+
+    const dot = document.createElement('button');
+    dot.className = 'sdot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(dot);
+  });
+
+  // Hide controls if only 1 image
+  if (images.length === 1) {
+    prevBtn.style.display = nextBtn.style.display = 'none';
+    dotsEl.style.display = 'none';
+    countEl.style.display = 'none';
+  }
+
+  function goTo(idx) {
+    cur = (idx + images.length) % images.length;
+    const sliderWidth = card.querySelector('.slider').offsetWidth;
+    slidesEl.style.transform = `translateX(-${cur * sliderWidth}px)`;
+    dotsEl.querySelectorAll('.sdot').forEach((d, i) => d.classList.toggle('active', i === cur));
+    countEl.textContent = `${cur + 1} / ${images.length}`;
+  }
+
+  prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo(cur - 1); });
+  nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo(cur + 1); });
+
+  // Touch swipe
+  let startX = 0;
+  const slider = card.querySelector('.slider');
+  slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
+  slider.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
+  }, {passive: true});
+
+  goTo(0);
+});
+
+// ── PETALS ──
+const wrap = document.getElementById('petals');
+for(let i=0;i<20;i++){
+  const p=document.createElement('div');
+  p.className='petal';
+  p.style.cssText=`left:${Math.random()*100}%;width:${6+Math.random()*7}px;height:${8+Math.random()*10}px;background:${Math.random()>.5?'#F2D9CE':'#EDF2EB'};animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*12}s`;
+  wrap.appendChild(p);
+}
+
+// ── LANG TOGGLE ──
+function setLang(lang) {
+  document.body.classList.toggle('en', lang === 'en');
+  document.getElementById('btn-id').classList.toggle('active', lang === 'id');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  localStorage.setItem('lv_lang', lang);
+}
+// restore saved lang
+const saved = localStorage.getItem('lv_lang');
+if (saved === 'en') setLang('en');
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+// --- music
+let music = document.getElementById("bg-music");
+
+function toggleMusic() {
+const btn = document.getElementById('music-btn');
+	if (music.paused) {
+	music.play();
+    btn.textContent = '🎵'; // balik ke musik
+  } else {
+  music.pause();
+    btn.textContent = '🔇'; // ganti jadi muted
+  }
+  
+}
+</script>
+</body>
+</html>
