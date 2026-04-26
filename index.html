@@ -643,29 +643,29 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 });
 
 // --- music
-let music = document.getElementById("bg-music");
+const music = document.getElementById("bg-music");
+let isPlaying = false;
 
 function toggleMusic() {
-const btn = document.getElementById('music-btn');
-	if (music.paused) {
-	music.play();
-    btn.textContent = '🎵'; // balik ke musik
+  const btn = document.getElementById('music-btn');
+  if (music.paused) {
+    music.play();
+    isPlaying = true;
+    btn.textContent = '🔇';
   } else {
-  music.pause();
-    btn.textContent = '🔇'; // ganti jadi muted
+    music.pause();
+    isPlaying = false;
+    btn.textContent = '🎵';
   }
-  
 }
 
-// Pause musik saat pindah app / minimize browser
+// Pause saat pindah app / keluar browser, lanjut saat balik
 document.addEventListener('visibilitychange', () => {
-  const music = document.getElementById('bg-music');
   if (!music) return;
-  
   if (document.hidden) {
-    music.pause(); // pindah app → pause
+    music.pause();
   } else {
-    music.play();  // balik ke browser → lanjut
+    if (isPlaying) music.play();
   }
 });
 </script>
