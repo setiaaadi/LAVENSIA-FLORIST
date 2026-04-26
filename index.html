@@ -656,6 +656,18 @@ const btn = document.getElementById('music-btn');
   }
   
 }
+
+// Pause musik saat pindah app / minimize browser
+document.addEventListener('visibilitychange', () => {
+  const music = document.getElementById('music-btn');
+  if (!music) return;
+  
+  if (document.hidden) {
+    music.pause(); // pindah app → pause
+  } else {
+    music.play();  // balik ke browser → lanjut
+  }
+});
 </script>
 </body>
 </html>
