@@ -659,7 +659,7 @@ const btn = document.getElementById('music-btn');
 
 // Pause musik saat pindah app / minimize browser
 document.addEventListener('visibilitychange', () => {
-  const music = document.getElementById('music-btn');
+  const music = document.getElementById('bg-music');
   if (!music) return;
   
   if (document.hidden) {
