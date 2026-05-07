@@ -214,9 +214,24 @@ span[data-id],span[data-en]{display:inline;}
 /* ── PRICELIST MODAL ── */
 .btn-pricelist{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--rose);padding:13px 22px;border-radius:100px;font-size:14px;background:rgba(255,255,255,.7);transition:all .2s;cursor:pointer;font-family:'DM Sans',sans-serif;}
 .btn-pricelist:hover{border-color:var(--sage);color:var(--sage);background:#fff;}
-.modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.6);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s;}
-.modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:#fff;border-radius:20px;width:100%;max-width:880px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);transition:transform .25s;box-shadow:0 24px 60px rgba(0,0,0,.25);-webkit-overflow-scrolling:touch;}
+/* PRICELIST MODAL */
+.modal-overlay{
+  position:fixed;inset:0;z-index:500;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(5px);
+  display:flex;align-items:center;justify-content:center;
+  padding:16px;
+  opacity:0;
+  visibility:hidden;        /* iOS fix: benar-benar sembunyikan, bukan cuma transparent */
+  pointer-events:none;
+  transition:opacity .25s, visibility .25s;
+}
+.modal-overlay.open{
+  opacity:1;
+  visibility:visible;       /* iOS fix: munculkan kembali saat open */
+  pointer-events:all;
+}
+.modal-box{background:#fff;border-radius:20px;width:100%;max-width:880px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);transition:transform .25s;box-shadow:0 24px 60px rgba(0,0,0,.25);}
 .modal-overlay.open .modal-box{transform:translateY(0);}
 .modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);flex-shrink:0;}
 .modal-head h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--rose);}
@@ -226,7 +241,7 @@ span[data-id],span[data-en]{display:inline;}
 .mtab{padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border2);color:var(--text-mid);background:#fff;font-family:'DM Sans',sans-serif;transition:all .18s;}
 .mtab.active{background:var(--rose);color:#fff;border-color:var(--rose);}
 .mtab:hover:not(.active){border-color:var(--rose);color:var(--rose);}
-.modal-body{flex:1;overflow:hidden;position:relative;background:var(--cream);-webkit-overflow-scrolling:touch;}
+.modal-body{flex:1;overflow:hidden;position:relative;background:var(--cream);}
 .pdf-frame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none;}
 .pdf-frame.active{display:block;}
 .pdf-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:14px;color:var(--text-mid);}
@@ -754,14 +769,14 @@ function openPricelist() {
   const modal = document.getElementById('pricelist-modal');
   modal.classList.add('open');
 
-  // iOS Safari fix — lock scroll tanpa kehilangan posisi
+  // iOS fix: simpan posisi scroll lalu lock body
   const scrollY = window.scrollY;
+  document.body.dataset.scrollY = scrollY;
   document.body.style.position = 'fixed';
   document.body.style.top = `-${scrollY}px`;
   document.body.style.left = '0';
   document.body.style.right = '0';
-  document.body.style.overflow = 'hidden';
-  document.body.dataset.scrollY = scrollY;
+  document.body.style.width = '100%';
 
   if (!pdfLoaded[0]) {
     document.getElementById('pdf-0').src = PDF_LINKS[0];
@@ -770,16 +785,23 @@ function openPricelist() {
 }
 
 function closePricelist() {
-  document.getElementById('pricelist-modal').classList.remove('open');
+  const modal = document.getElementById('pricelist-modal');
+  modal.classList.remove('open');
 
-  // iOS Safari fix — restore scroll ke posisi semula
+  // iOS fix: restore scroll setelah modal benar-benar hidden (visibility:hidden butuh 1 frame)
   const scrollY = parseInt(document.body.dataset.scrollY || '0');
   document.body.style.position = '';
   document.body.style.top = '';
   document.body.style.left = '';
   document.body.style.right = '';
-  document.body.style.overflow = '';
-  window.scrollTo(0, scrollY);
+  document.body.style.width = '';
+
+  // requestAnimationFrame pastikan DOM update dulu sebelum scroll restore
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, scrollY);
+    });
+  });
 }
 
 function closePricelistOutside(e) {
