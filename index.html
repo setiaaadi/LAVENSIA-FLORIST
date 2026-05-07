@@ -196,15 +196,15 @@ footer a{color:var(--rose-light);text-decoration:none;}
 .btn-maps svg{width:14px;height:14px;flex-shrink:0;}
 
 /* BILINGUAL helpers */
-[data-en]{display:block;}
-body.en [data-id]{display:none!important;}
-body.en [data-en]{display:block!important;}
-body:not(.en) [data-en]{display:none!important;}
-body:not(.en) [data-id]{display:block!important;}
-/* inline spans */
-span[data-id],span[data-en]{display:inline;}
-/* for elements that should show inline when active */
-.nav-links a span[data-id], .nav-links a span[data-en]{display:inline;}
+/* BILINGUAL — default: tampilkan ID, sembunyikan EN */
+[data-en]             { display: none; }
+[data-id]             { display: block; }
+span[data-en]         { display: none; }
+span[data-id]         { display: inline; }
+body.en [data-id]     { display: none !important; }
+body.en [data-en]     { display: block !important; }
+body.en span[data-id] { display: none !important; }
+body.en span[data-en] { display: inline !important; }
 
 @media(max-width:768px){.nav-links{display:none;}.info-wrap{grid-template-columns:1fr;}.grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:480px){.grid{grid-template-columns:1fr;}}
@@ -310,7 +310,7 @@ span[data-id],span[data-en]{display:inline;}
 
   <div class="grid">
 
-    <!-- ═══ PRODUK 1 — HAMPERS ═══
+    <!-- ═══ PRODUK 1 — ROSES ═══
          Ganti foto: isi array di data-images dengan link foto kamu -->
     <div class="card" data-images='[
       "images/1_roses/a1.jpeg",
@@ -342,7 +342,7 @@ span[data-id],span[data-en]{display:inline;}
       </div>
     </div>
 
-    <!-- ═══ PRODUK 2 — FRESH BOUQUET ═══ -->
+    <!-- ═══ PRODUK 2 — THUMBELINA ═══ -->
     <div class="card" data-images='[
       "images/2_thumbelina_fresh/b1.jpeg",
 	  "images/2_thumbelina_fresh/b2.jpeg",
@@ -367,7 +367,7 @@ span[data-id],span[data-en]{display:inline;}
       </div>
     </div>
 
-    <!-- ═══ PRODUK 3 — BLOOM BOX ═══ -->
+    <!-- ═══ PRODUK 3 — ASTER ═══ -->
     <div class="card" data-images='[
       "images/3_aster/c1.jpeg",
 	  "images/3_aster/c2.jpeg",
@@ -738,6 +738,44 @@ document.addEventListener('visibilitychange', () => {
   }
 });
 
+// ── GA4 TRACKING SEMUA TOMBOL WA ──
+document.addEventListener('click', function(e) {
+  const a = e.target.closest('a[href*="wa.me"]');
+  if (!a) return;
+  let label = 'WA Button';
+  if (a.classList.contains('nav-wa'))      label = 'Navbar Order WA';
+  else if (a.classList.contains('btn-primary') && a.closest('.hero')) label = 'Hero Pesan Sekarang';
+  else if (a.classList.contains('wa-float'))   label = 'Floating WA Button';
+  else if (a.classList.contains('btn-wa-big')) label = 'Kontak Chat Sekarang';
+  else if (a.classList.contains('btn-wa')) {
+    const cardName = a.closest('.card')?.querySelector('.card-name')?.textContent?.trim();
+    label = cardName ? 'Card: ' + cardName : 'Card Order WA';
+  } else if (a.classList.contains('btn-ongkir')) label = 'Kirim Screenshot Ongkir';
+  else if (a.closest('footer'))            label = 'Footer WA';
+  else if (a.closest('#info'))             label = 'Kontak WA Number';
+
+  gtag('event', 'klik_wa', {
+    event_category: 'engagement',
+    event_label: label
+  });
+});
+
+// ── GA4 TRACKING TOMBOL LAIN ──
+document.addEventListener('click', function(e) {
+  // Cek Ongkir Grab
+  if (e.target.closest('a[href*="grab.com"]')) {
+    gtag('event', 'klik_cek_ongkir', { event_category: 'engagement', event_label: 'Grab Express' });
+  }
+  // Instagram
+  if (e.target.closest('a[href*="instagram.com"]')) {
+    gtag('event', 'klik_instagram', { event_category: 'engagement', event_label: 'Instagram Lavensia' });
+  }
+  // Google Maps
+  if (e.target.closest('a[href*="maps.app.goo"]')) {
+    gtag('event', 'klik_maps', { event_category: 'engagement', event_label: 'Google Maps Lokasi' });
+  }
+});
+
 // ── PRICELIST MODAL ──
 const PDF_LINKS = [
   'https://drive.google.com/file/d/1QUT1OLkT1cRWXVonbX76SIBAlkqHtuxV/preview',
@@ -749,16 +787,29 @@ let pdfLoaded = [false, false];
 function openPricelist() {
   const modal = document.getElementById('pricelist-modal');
   modal.classList.add('open');
+  // iOS Safari fix — simpan posisi scroll sebelum lock
+  document.body.dataset.scrollY = window.scrollY;
   document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${window.scrollY}px`;
+  document.body.style.width = '100%';
   if (!pdfLoaded[0]) {
     document.getElementById('pdf-0').src = PDF_LINKS[0];
     pdfLoaded[0] = true;
   }
+  // Track GA4
+  gtag('event', 'buka_pricelist', { event_category: 'engagement', event_label: 'Pricelist Modal' });
 }
 
 function closePricelist() {
   document.getElementById('pricelist-modal').classList.remove('open');
+  // iOS Safari fix — restore posisi scroll yang tersimpan
+  const scrollY = document.body.dataset.scrollY || '0';
   document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, parseInt(scrollY));
 }
 
 function closePricelistOutside(e) {
