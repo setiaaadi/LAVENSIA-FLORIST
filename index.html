@@ -40,9 +40,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,247,250,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6vw;height:62px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em;display:flex;align-items:center;gap:8px;}
-.nav-logo img{width:36px;height:36px;border-radius:8px;object-fit:cover;}
-.nav-logo span{color:var(--rose);}
 .nav-links{display:flex;gap:26px;list-style:none;}
 .nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
 .nav-links a:hover{color:var(--rose);}
@@ -219,7 +216,7 @@ span[data-id],span[data-en]{display:inline;}
 .btn-pricelist:hover{border-color:var(--sage);color:var(--sage);background:#fff;}
 .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.6);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s;}
 .modal-overlay.open{opacity:1;pointer-events:all;}
-.modal-box{background:#fff;border-radius:20px;width:100%;max-width:880px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);transition:transform .25s;box-shadow:0 24px 60px rgba(0,0,0,.25);}
+.modal-box{background:#fff;border-radius:20px;width:100%;max-width:880px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);transition:transform .25s;box-shadow:0 24px 60px rgba(0,0,0,.25);-webkit-overflow-scrolling:touch;}
 .modal-overlay.open .modal-box{transform:translateY(0);}
 .modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);flex-shrink:0;}
 .modal-head h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--rose);}
@@ -229,7 +226,7 @@ span[data-id],span[data-en]{display:inline;}
 .mtab{padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border2);color:var(--text-mid);background:#fff;font-family:'DM Sans',sans-serif;transition:all .18s;}
 .mtab.active{background:var(--rose);color:#fff;border-color:var(--rose);}
 .mtab:hover:not(.active){border-color:var(--rose);color:var(--rose);}
-.modal-body{flex:1;overflow:hidden;position:relative;background:var(--cream);}
+.modal-body{flex:1;overflow:hidden;position:relative;background:var(--cream);-webkit-overflow-scrolling:touch;}
 .pdf-frame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none;}
 .pdf-frame.active{display:block;}
 .pdf-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:14px;color:var(--text-mid);}
@@ -756,7 +753,16 @@ let pdfLoaded = [false, false];
 function openPricelist() {
   const modal = document.getElementById('pricelist-modal');
   modal.classList.add('open');
+
+  // iOS Safari fix — lock scroll tanpa kehilangan posisi
+  const scrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
   document.body.style.overflow = 'hidden';
+  document.body.dataset.scrollY = scrollY;
+
   if (!pdfLoaded[0]) {
     document.getElementById('pdf-0').src = PDF_LINKS[0];
     pdfLoaded[0] = true;
@@ -765,7 +771,15 @@ function openPricelist() {
 
 function closePricelist() {
   document.getElementById('pricelist-modal').classList.remove('open');
+
+  // iOS Safari fix — restore scroll ke posisi semula
+  const scrollY = parseInt(document.body.dataset.scrollY || '0');
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
   document.body.style.overflow = '';
+  window.scrollTo(0, scrollY);
 }
 
 function closePricelistOutside(e) {
