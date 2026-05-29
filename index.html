@@ -38,18 +38,35 @@
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,247,250,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 6vw;height:62px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em;}
+/* NAV — 2 baris */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,247,250,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+/* Top bar */
+.nav-topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 6vw;border-bottom:1px solid var(--border);font-size:12.5px;color:var(--text-mid);}
+.nav-topbar-left{display:flex;align-items:center;gap:22px;}
+
+.nav-contact-item{display:flex;align-items:center;gap:6px;color:var(--text-mid);text-decoration:none;transition:color .2s;}
+.nav-contact-item:hover{color:var(--rose);}
+.nav-topbar-right{display:flex;align-items:center;justify-content:flex-end;gap:8px;}
+.nav-wa{background:var(--rose);color:#fff;padding:5px 16px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;}
+.nav-wa:hover{background:var(--rose-dark);transform:scale(1.03);}
+/* Mobile */
+@media (max-width: 768px){.nav-wa{ display:none; height:0; padding:0; margin:0; }}
+
+/* Bottom bar */
+.nav-bottombar{display:flex;align-items:center;justify-content:center;padding:0 6vw;height:50px;position:relative;}
+/* Mobile */
+@media (max-width: 768px){
+  .nav-bottombar{display:flex;align-items:center;justify-content:center;padding:0 6vw;height:0px;position:relative;}}
+
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em;white-space:nowrap;}
 .nav-logo span{color:var(--rose);}
-.nav-links{display:flex;gap:26px;list-style:none;}
+.nav-links{display:flex;gap:24px;list-style:none;margin:0 auto;}
 .nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
 .nav-links a:hover{color:var(--rose);}
-.nav-wa{background:var(--rose);color:#fff;padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;}
-.nav-wa:hover{background:var(--rose-dark);transform:scale(1.03);}
+.nav-hamburger-wrap{position:absolute;right:6vw;top:50%;transform:translateY(-50%);}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:110px 24px 64px;position:relative;overflow:hidden;}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 64px;position:relative;overflow:hidden;}
 .hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 38%,#C8D8EE 0%,transparent 65%),radial-gradient(ellipse 45% 38% at 82% 78%,#E4EBF5 0%,transparent 60%),radial-gradient(ellipse 30% 25% at 15% 70%,#F2C6C2 0%,transparent 55%);opacity:.55;}
 .petal-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
 .petal{position:absolute;border-radius:50% 0 50% 0;opacity:0;animation:pfall linear infinite;}
@@ -210,7 +227,35 @@ span[data-id],span[data-en]{display:inline;}
 /* for elements that should show inline when active */
 .nav-links a span[data-id], .nav-links a span[data-en]{display:inline;}
 
-@media(max-width:768px){.nav-links{display:none;}.info-wrap{grid-template-columns:1fr;}.grid{grid-template-columns:1fr 1fr;}}
+/* HAMBURGER BUTTON */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:1.5px solid var(--border2);border-radius:10px;cursor:pointer;padding:0;transition:background .2s;}
+.nav-hamburger:hover{background:var(--rose-pale);}
+.nav-hamburger span{display:block;width:18px;height:2px;background:var(--rose);border-radius:2px;transition:all .25s;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+@media(max-width:768px){
+  .nav-hamburger{display:flex;}
+  .nav-topbar-left .nav-contact-item:last-child{display:none;}
+  .nav-links{
+    display:none;
+    position:absolute;top:100%;left:0;right:0;
+    background:rgba(245,247,250,.98);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    gap:0;
+    padding:8px 0 12px;
+    z-index:99;
+  }
+  .nav-links.open{display:flex;}
+  .nav-links li{width:100%;}
+  .nav-links a{display:block;padding:12px 24px;font-size:14px;border-bottom:1px solid var(--border);}
+  .nav-links li:last-child a{border-bottom:none;}
+  .info-wrap{grid-template-columns:1fr;}
+  .grid{grid-template-columns:1fr 1fr;}
+}
 @media(max-width:480px){.grid{grid-template-columns:1fr;}}
 
 /* ── PRICELIST MODAL ── */
@@ -255,23 +300,34 @@ span[data-id],span[data-en]{display:inline;}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    Lavensia <span>Florist</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
-    <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
-    <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
-    <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
-    <li><a href="#btn-maps"><span data-id>Lokasi</span><span data-en>Location</span></a></li>
-    <li><a href="javascript:void(0)" onclick="openPricelist()">📋 Pricelist</a></li>
-  </ul>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <div class="lang-toggle">
-      <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
-      <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  <!-- TOP BAR: Order WA kiri + Lavensia Florist tengah + lang toggle kanan -->
+  <div class="nav-topbar">
+    <div class="nav-topbar-left">
+      <a class="nav-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><span data-id>Order WA</span><span data-en>Order WA</span></a>
+	<div>
+	<button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+	  </div>
+	</div>
+    <div class="nav-logo">Lavensia <span>Florist</span></div>
+    <div class="nav-topbar-right">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
+        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+      </div>
     </div>
-    <a class="nav-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><span data-id>Order WA</span><span data-en>Order WA</span></a>
+  </div>
+  <!-- BOTTOM BAR: menu navigasi -->
+  <div class="nav-bottombar">
+    <ul class="nav-links">
+      <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
+      <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
+      <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
+      <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
+      <li><a href="#btn-maps"><span data-id>Lokasi</span><span data-en>Location</span></a></li>
+      <li><a href="javascript:void(0)" onclick="openPricelist()">📋 Pricelist</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -822,6 +878,21 @@ function switchPdf(idx, btn) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closePricelist(); });
+
+// ── MOBILE NAV TOGGLE ──
+function toggleMobileNav() {
+  const nav = document.querySelector('.nav-links');
+  const btn = document.getElementById('nav-hamburger');
+  nav.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+// Tutup mobile nav saat klik link
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+    document.getElementById('nav-hamburger').classList.remove('open');
+  });
+});
 </script>
 
 <!-- PRICELIST MODAL HTML -->
