@@ -818,7 +818,8 @@ document.addEventListener('visibilitychange', () => {
 // ── PRICELIST MODAL ──
 const PDF_LINKS = [
   'https://drive.google.com/file/d/1QUT1OLkT1cRWXVonbX76SIBAlkqHtuxV/preview',
-  'https://drive.google.com/file/d/1PlxLxg1-WXIQKBOR4gdO5SfB-MnDBfYl/preview'
+  'https://drive.google.com/file/d/1PlxLxg1-WXIQKBOR4gdO5SfB-MnDBfYl/preview',
+  'https://drive.google.com/file/d/12LvklCPzOr-5eXKmWQzieO2i7C0YqUWH/preview'
 ];
 
 let pdfLoaded = [false, false];
@@ -905,6 +906,7 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     <div class="modal-tabs">
       <button class="mtab active" onclick="switchPdf(0, this)">📄 Pricelist Bouquet Depok</button>
       <button class="mtab" onclick="switchPdf(1, this)">📄 Pricelist Fresh Flowers</button>
+	  <button class="mtab" onclick="switchPdf(2, this)">📄 BEST 2025 Fresh Flowers</button>
     </div>
     <div class="modal-body">
       <div class="pdf-loading" id="pdf-loading-0">
@@ -912,11 +914,18 @@ document.querySelectorAll('.nav-links a').forEach(a => {
         <span>Memuat pricelist...</span>
       </div>
       <iframe class="pdf-frame active" id="pdf-0" src="" onload="document.getElementById('pdf-loading-0').style.display='none'"></iframe>
-      <div class="pdf-loading" id="pdf-loading-1" style="display:none">
+      
+	  <div class="pdf-loading" id="pdf-loading-1" style="display:none">
         <div class="spin"></div>
         <span>Memuat pricelist...</span>
       </div>
       <iframe class="pdf-frame" id="pdf-1" src="" onload="document.getElementById('pdf-loading-1').style.display='none'"></iframe>
+	  
+	  <div class="pdf-loading" id="pdf-loading-2" style="display:none">
+        <div class="spin"></div>
+        <span>Memuat pricelist...</span>
+      </div>
+      <iframe class="pdf-frame" id="pdf-2" src="" onload="document.getElementById('pdf-loading-2').style.display='none'"></iframe>
     </div>
   </div>
 </div>
