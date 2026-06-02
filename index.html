@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<!-- font informasi web) -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-12E1ZWQLJM"></script>
 <script>
@@ -294,6 +296,76 @@ span[data-id],span[data-en]{display:inline;}
 .pdf-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:14px;color:var(--text-mid);}
 .pdf-loading .spin{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--rose);border-radius:50%;animation:spin .7s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── INFORMASI AWAL WEB ── */
+.features{
+    max-width:1400px;
+    margin:auto;
+    padding:100px 80px;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(180px,1fr));
+    gap:30px;
+    background:#f5f6fa;
+}
+
+.feature-item{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.feature-icon{
+    font-size:38px;
+    color:#193b73;
+    margin-bottom:24px;
+}
+
+.feature-item h3{
+    font-family:"Cormorant Garamond", serif;
+    font-size:30px;
+    font-weight:500;
+    line-height:1.25;
+    color:#1f2430;
+    margin:0 0 20px;
+    min-height:78px; /* supaya semua sejajar */
+}
+
+.feature-item p{
+    font-family:"Poppins", sans-serif;
+    font-size:16px;
+    line-height:2;
+    color:#6f7c91;
+    margin:0;
+}
+
+/* Tablet */
+@media(max-width:1024px){
+    .features{
+        grid-template-columns:repeat(2,1fr);
+        gap:50px;
+        padding:80px 40px;
+    }
+}
+
+/* Mobile */
+@media(max-width:768px){
+    .features{
+        grid-template-columns:1fr;
+        padding:60px 25px;
+        gap:40px;
+    }
+
+    .feature-item{
+        align-items:center;
+        text-align:center;
+    }
+
+    .feature-item h3{
+        min-height:auto;
+        font-size:26px;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -322,7 +394,7 @@ span[data-id],span[data-en]{display:inline;}
   <div class="nav-bottombar">
     <ul class="nav-links">
       <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
-      <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
+      <li><a href="ongkir.html"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
       <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
       <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
       <li><a href="https://maps.app.goo.gl/q4aGJihunSBLZu6q6" target="_blank"<span data-id>Lokasi</span><span data-en>Location</span></a></li>
@@ -362,6 +434,53 @@ span[data-id],span[data-en]{display:inline;}
   </div>
 </section>
 
+<!-- INFORMASI AWAL WEB -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<section class="features">
+    
+    <div class="feature-item">
+        <i class="fa-solid fa-seedling feature-icon"></i>
+        <h3>Bunga Segar<br>Berkualitas</h3>
+        <p>
+            Setiap rangkaian dibuat menggunakan bunga pilihan untuk menjaga
+            keindahan dan kesegarannya.
+        </p>
+    </div>
+
+    <div class="feature-item">
+        <i class="fa-regular fa-clock feature-icon"></i>
+        <h3>Pesanan<br>Fleksibel</h3>
+        <p>
+            Melayani pemesanan mendadak dengan proses yang cepat dan mudah.
+        </p>
+    </div>
+
+    <div class="feature-item">
+        <i class="fa-solid fa-truck-fast feature-icon"></i>
+        <h3>Pengiriman<br>Cepat</h3>
+        <p>
+            Layanan pengiriman di hari yang sama untuk memastikan momen spesialmu tetap tepat waktu.
+        </p>
+    </div>
+
+    <div class="feature-item">
+        <i class="fa-regular fa-comments feature-icon"></i>
+        <h3>Konsultasi<br>Florist Gratis</h3>
+        <p>
+            Dapatkan saran profesional untuk memilih bunga yang paling sesuai dengan acara dan kebutuhanmu.
+        </p>
+    </div>
+
+    <div class="feature-item">
+        <i class="fa-solid fa-award feature-icon"></i>
+        <h3>Jaminan Kepuasan<br>Pelanggan</h3>
+        <p>
+            Kami berkomitmen memberikan produk dan layanan terbaik untuk pengalaman berbelanja yang menyenangkan.
+        </p>
+    </div>
+
+</section>
 <!-- ══════════════════════════════════════════════════════
      KATALOG PRODUK
 
@@ -657,6 +776,10 @@ span[data-id],span[data-en]{display:inline;}
         <div class="ilabel">Instagram</div>
         <div class="ival"><a href="https://www.instagram.com/lavensia.florist/" target="_blank">@lavensia.florist</a></div>
       </div>
+	  <div class="iblock">
+        <div class="ilabel">Tiktok</div>
+        <div class="ival"><a href="https://www.tiktok.com/@lavensia.florist" target="_blank">@lavensia.florist</a></div>
+      </div>
     </div>
     <div class="info-cta">
       <h2>
@@ -679,7 +802,8 @@ span[data-id],span[data-en]{display:inline;}
 <footer>
   <strong>Lavensia Florist</strong><br/>
   Jl. Merdeka Raya No.19, Abadijaya, Kec. Sukmajaya, Kota Depok 16417<br/>
-  <a href="https://www.instagram.com/lavensia.florist/" target="_blank">@lavensia.florist</a> &nbsp;·&nbsp;
+  <a href="https://www.instagram.com/lavensia.florist/" target="_blank">IG @lavensia.florist</a> &nbsp;·&nbsp;
+  <a href="https://www.tiktok.com/@lavensia.florist" target="_blank">TIKTOK @lavensia.florist</a>
   <a href="https://wa.me/6281243043054" target="_blank">+62 812-4304-3054</a><br/><br/>
   <span style="font-size:12px;opacity:.4;">© 2019 Lavensia Florist · Made with 🌸</span>
 </footer>
