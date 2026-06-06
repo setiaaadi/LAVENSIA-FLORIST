@@ -154,24 +154,6 @@ section{padding:80px 6vw;}
 .ongkir-note{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;font-size:13px;color:rgba(255,255,255,.62);line-height:1.65;text-align:left;max-width:500px;}
 .ongkir-note .ni{font-size:17px;flex-shrink:0;margin-top:1px;}
 
-/* REVIEW SECTION */
-#review{background:#fff;}
-.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:32px;}
-.rcard{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:20px;transition:transform .2s,box-shadow .2s;}
-.rcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,58,95,.1);}
-.rcard-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
-.rcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;flex-shrink:0;}
-.rcard-name{font-size:14px;font-weight:500;color:var(--text);}
-.rcard-date{font-size:12px;color:var(--text-light);}
-.rcard-stars{color:#F5A623;font-size:13px;letter-spacing:1px;margin-bottom:8px;}
-.rcard-text{font-size:13px;color:var(--text-mid);line-height:1.65;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
-.rcard-text.expanded{-webkit-line-clamp:unset;overflow:visible;}
-.btn-readmore{background:none;border:none;color:var(--rose);font-size:12px;font-weight:500;cursor:pointer;padding:4px 0 0;font-family:'DM Sans',sans-serif;}
-.btn-readmore:hover{text-decoration:underline;}
-.btn-gmaps{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--border2);color:var(--rose);padding:12px 24px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;background:#fff;transition:all .2s;}
-.btn-gmaps:hover{background:var(--rose);color:#fff;border-color:var(--rose);}
-.btn-gmaps svg{width:16px;height:16px;flex-shrink:0;}
-
 /* LAYANAN */
 #layanan{background:var(--cream);}
 .layanan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:18px;margin-top:38px;}
@@ -828,21 +810,37 @@ span[data-id],span[data-en]{display:inline;}
 </section>
 
 <!-- KATA MEREKA -->
+<style>
+#review{background:#fff;padding:80px 6vw;}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:20px;}
+.rcard{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:20px;transition:transform .2s,box-shadow .2s;}
+.rcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,58,95,.1);}
+.rcard.hidden-review{display:none;}
+.rcard-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.rcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;flex-shrink:0;}
+.rcard-name{font-size:14px;font-weight:500;color:var(--text);}
+.rcard-date{font-size:12px;color:var(--text-light);}
+.rcard-stars{color:#F5A623;font-size:13px;margin-bottom:8px;}
+.rcard-text{font-size:13px;color:var(--text-mid);line-height:1.65;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
+.rcard-text.expanded{display:block;}
+.btn-readmore{background:none;border:none;color:var(--rose);font-size:12px;font-weight:500;cursor:pointer;padding:6px 0 0;font-family:'DM Sans',sans-serif;display:block;}
+.btn-readmore:hover{text-decoration:underline;}
+.review-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:4px;}
+.btn-gmaps{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--rose);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;background:#fff;transition:all .2s;}
+.btn-gmaps:hover{background:var(--rose);color:#fff;border-color:var(--rose);}
+.btn-gmaps svg{width:15px;height:15px;flex-shrink:0;}
+.btn-showmore{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--text-mid);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:500;background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
+.btn-showmore:hover{border-color:var(--rose);color:var(--rose);}
+</style>
 <section id="review">
-  <div style="margin-bottom:40px;">
+  <div style="margin-bottom:36px;">
     <div class="stag"><span data-id>Kata Mereka</span><span data-en>What They Say</span></div>
-    <h2 class="stitle"><span data-id>Ribuan pelanggan <em>puas</em></span><span data-en>Thousands of <em>happy</em> customers</span></h2>
+    <h2 class="stitle"><span data-id>Pelanggan kami <em>berbicara</em></span><span data-en>Our customers <em>speak</em></span></h2>
     <p class="ssub"><span data-id>Bukan kami yang bilang — tapi mereka yang sudah merasakan sendiri 🌸</span><span data-en>Don't take our word for it — hear it from our customers 🌸</span></p>
   </div>
 
-  <div style="margin-bottom:28px;">
-    <a class="btn-gmaps" href="https://www.google.com/maps/place/Lavensia+Florist/@-6.3964931,106.848162,17z" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <span data-id>Lihat ulasan lainnya</span><span data-en>See more reviews</span>
-    </a>
-  </div>
-
-  <div class="review-grid">
+  <div class="review-grid" id="review-grid">
+    <!-- 3 tampil awal -->
     <div class="rcard">
       <div class="rcard-top"><div class="rcard-avatar">A</div><div><div class="rcard-name">Amanda Solparka</div><div class="rcard-date">7 bulan lalu</div></div></div>
       <div class="rcard-stars">★★★★★</div>
@@ -850,41 +848,52 @@ span[data-id],span[data-en]{display:inline;}
       <button class="btn-readmore" onclick="toggleReview('r1',this)">Baca selengkapnya</button>
     </div>
     <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">T</div><div><div class="rcard-name">Tommy Fabiosta</div><div class="rcard-date">6 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r2">Alhamdulillah... setelah pencarian beberapa hari florist yang bisa dipercaya, baik secara harga ataupun hasilnya, karena Bunga meja yang saya minta ada bunga Tulip importnya. Akhirnya saya ketemu di IG bouquet.depok, hasilnya memuaskan sekali dengan harga yang sesuai budget. Terimakasih!</div>
-      <button class="btn-readmore" onclick="toggleReview('r2',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">E</div><div><div class="rcard-name">Eirene Claudiaa</div><div class="rcard-date">8 bulan lalu · Local Guide</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r3">Good service! Fast response, bisa kasih option sesuai kebutuhan, satset 30 menit kelar trs langsung bisa dipickup grab. Kerennn. Pas nyampe juga rapih banget, ga terlihat sesuatu yang dibuat dadakan. Thank you!</div>
-      <button class="btn-readmore" onclick="toggleReview('r3',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard">
       <div class="rcard-top"><div class="rcard-avatar">C</div><div><div class="rcard-name">Christina Devina</div><div class="rcard-date">9 bulan lalu</div></div></div>
       <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r4">Ini ke tiga kali nya aku beli bunga disini! Kualitas ketahanan bunganya juara — sempet beli bunga selesai siang tapi baru ketemu temen jam 8 malam, masih fresh dan wangi bunganya. Untuk ide apapun akan diusahain diwujudin. Ketiga bouquet yang aku beli selalu rapih dan cantik hasilnya. Thanks a lot!</div>
-      <button class="btn-readmore" onclick="toggleReview('r4',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">V</div><div><div class="rcard-name">Virgilia Rahaded</div><div class="rcard-date">6 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r5">Selalu amazed sama rangkaian bunganya. Gak pernah ragu, sellernya ramah dan pesanan selalu sesuai ekspektasi ❤️ bunga pun juga fresh banget!!!</div>
-      <button class="btn-readmore" onclick="toggleReview('r5',this)">Baca selengkapnya</button>
+      <div class="rcard-text" id="r2">Ini ke tiga kali nya aku beli bunga disini! Kualitas ketahanan bunganya juara — sempet beli bunga selesai siang tapi baru ketemu temen jam 8 malam, masih fresh dan wangi bunganya. Untuk ide apapun akan diusahain diwujudin. Ketiga bouquet yang aku beli selalu rapih dan cantik hasilnya. Thanks a lot!</div>
+      <button class="btn-readmore" onclick="toggleReview('r2',this)">Baca selengkapnya</button>
     </div>
     <div class="rcard">
       <div class="rcard-top"><div class="rcard-avatar">F</div><div><div class="rcard-name">Francisca Mifta C</div><div class="rcard-date">9 bulan lalu</div></div></div>
       <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r6">Recommended banget! Biar bintang yang berbicara, kalo ada 10 atau 100 aku kasih semuanya!! Aslinya lebih cantik dari yang difoto. Super memuaskan dari service dan kualitas. Gercep dan extra satset banget kakaknya. Semoga makin jaya 🌸</div>
+      <div class="rcard-text" id="r3">Recommended banget! Biar bintang yang berbicara, kalo ada 10 atau 100 aku kasih semuanya!! Aslinya lebih cantik dari yang difoto. Super memuaskan dari service dan kualitas. Gercep dan extra satset banget kakaknya. Semoga makin jaya 🌸</div>
+      <button class="btn-readmore" onclick="toggleReview('r3',this)">Baca selengkapnya</button>
+    </div>
+    <!-- 4 tersembunyi -->
+    <div class="rcard hidden-review">
+      <div class="rcard-top"><div class="rcard-avatar">T</div><div><div class="rcard-name">Tommy Fabiosta</div><div class="rcard-date">6 bulan lalu</div></div></div>
+      <div class="rcard-stars">★★★★★</div>
+      <div class="rcard-text" id="r4">Alhamdulillah... setelah pencarian beberapa hari florist yang bisa dipercaya, baik secara harga ataupun hasilnya. Akhirnya saya ketemu di IG bouquet.depok, hasilnya memuaskan sekali dengan harga yang sesuai budget. Terimakasih!</div>
+      <button class="btn-readmore" onclick="toggleReview('r4',this)">Baca selengkapnya</button>
+    </div>
+    <div class="rcard hidden-review">
+      <div class="rcard-top"><div class="rcard-avatar">E</div><div><div class="rcard-name">Eirene Claudiaa</div><div class="rcard-date">8 bulan lalu · Local Guide</div></div></div>
+      <div class="rcard-stars">★★★★★</div>
+      <div class="rcard-text" id="r5">Good service! Fast response, bisa kasih option sesuai kebutuhan, satset 30 menit kelar trs langsung bisa dipickup grab. Kerennn. Pas nyampe juga rapih banget, ga terlihat sesuatu yang dibuat dadakan. Thank you!</div>
+      <button class="btn-readmore" onclick="toggleReview('r5',this)">Baca selengkapnya</button>
+    </div>
+    <div class="rcard hidden-review">
+      <div class="rcard-top"><div class="rcard-avatar">V</div><div><div class="rcard-name">Virgilia Rahaded</div><div class="rcard-date">6 bulan lalu</div></div></div>
+      <div class="rcard-stars">★★★★★</div>
+      <div class="rcard-text" id="r6">Selalu amazed sama rangkaian bunganya. Gak pernah ragu, sellernya ramah dan pesanan selalu sesuai ekspektasi ❤️ bunga pun juga fresh banget!!!</div>
       <button class="btn-readmore" onclick="toggleReview('r6',this)">Baca selengkapnya</button>
     </div>
-    <div class="rcard">
+    <div class="rcard hidden-review">
       <div class="rcard-top"><div class="rcard-avatar">A</div><div><div class="rcard-name">Anbar Aisyah Fitri</div><div class="rcard-date">5 bulan lalu</div></div></div>
       <div class="rcard-stars">★★★★★</div>
       <div class="rcard-text" id="r7">Deg degan banget karna first time beli disini fresh flowers buat bos, takut bunganya layu — ternyata ngga dong, masih fresh sampai malam! 🌸</div>
       <button class="btn-readmore" onclick="toggleReview('r7',this)">Baca selengkapnya</button>
     </div>
+  </div>
+
+  <div class="review-actions">
+    <button class="btn-showmore" id="btn-showmore" onclick="toggleAllReviews(this)">
+      ↓ <span data-id>Lihat semua ulasan</span><span data-en>Show all reviews</span>
+    </button>
+    <a class="btn-gmaps" href="https://www.google.com/maps/place/Lavensia+Florist/@-6.3964984,106.8507423,17z/data=!4m18!1m9!3m8!1s0x2e69ebbd0e179611:0xb100fdf93129bfb5!2sLavensia+Florist!8m2!3d-6.3964984!4d106.8507423!9m1!1b1!16s%2Fg%2F11x79mrpfv!3m7!1s0x2e69ebbd0e179611:0xb100fdf93129bfb5!8m2!3d-6.3964984!4d106.8507423!9m1!1b1!16s%2Fg%2F11x79mrpfv?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span data-id>Lihat ulasan lainnya</span><span data-en>See more reviews</span>
+    </a>
   </div>
 </section>
 
@@ -1021,6 +1030,24 @@ document.querySelectorAll('.card[data-images]').forEach(card => {
 
   goTo(0);
 });
+
+// ── REVIEW ──
+function toggleReview(id, btn) {
+  const el = document.getElementById(id);
+  const expanded = el.classList.toggle('expanded');
+  btn.textContent = expanded ? 'Sembunyikan' : 'Baca selengkapnya';
+}
+
+function toggleAllReviews(btn) {
+  const hidden = document.querySelectorAll('.hidden-review');
+  const isHidden = hidden[0].style.display === 'none' || hidden[0].style.display === '';
+  hidden.forEach(el => el.style.display = isHidden ? 'block' : 'none');
+  const idSpan = btn.querySelector('[data-id]');
+  const enSpan = btn.querySelector('[data-en]');
+  if (idSpan) idSpan.textContent = isHidden ? 'Sembunyikan' : 'Lihat semua ulasan';
+  if (enSpan) enSpan.textContent = isHidden ? 'Hide' : 'Show all reviews';
+  btn.querySelector('span:first-child').textContent = isHidden ? '↑' : '↓';
+}
 
 // ── PETALS ──
 const wrap = document.getElementById('petals');
