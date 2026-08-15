@@ -172,6 +172,10 @@ section{padding:80px 6vw;}
 .ival{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--text);line-height:1.45;}
 .ival a{color:var(--rose);text-decoration:none;}
 .ival a:hover{text-decoration:underline;}
+.pay-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+.pay-badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--border2);border-radius:100px;padding:6px 14px 6px 8px;font-size:12.5px;font-weight:500;color:var(--text-mid);}
+.pay-badge .pico{width:22px;height:22px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pay-badge .pico svg{width:13px;height:13px;}
 .info-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:14px;}
 .info-cta h2 em{font-style:italic;color:var(--rose);}
 .info-cta p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:26px;}
@@ -925,6 +929,15 @@ span[data-id],span[data-en]{display:inline;}
 	  <div class="iblock">
         <div class="ilabel">Tiktok</div>
         <div class="ival"><a href="https://www.tiktok.com/@lavensia.florist" target="_blank">@lavensia.florist</a></div>
+      </div>
+      <div class="iblock">
+        <div class="ilabel"><span data-id>Metode Pembayaran</span><span data-en>Payment Methods</span></div>
+        <div class="pay-badges">
+          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10M20 21V10M2 10l10-7 10 7M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>Bank BRI</span>
+          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10M20 21V10M2 10l10-7 10 7M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>Bank BCA</span>
+          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20v.01"/></svg></span>QRIS</span>
+          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>ShopeePay Later</span>
+        </div>
       </div>
     </div>
     <div class="info-cta">
