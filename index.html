@@ -176,6 +176,20 @@ section{padding:80px 6vw;}
 .pay-badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--border2);border-radius:100px;padding:6px 14px 6px 8px;font-size:12.5px;font-weight:500;color:var(--text-mid);}
 .pay-badge .pico{width:22px;height:22px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .pay-badge .pico svg{width:13px;height:13px;}
+
+/* FAQ */
+#faq{background:var(--cream);}
+.faq-wrap{max-width:760px;margin:0 auto;}
+.faq-group{margin-bottom:34px;}
+.faq-group:last-child{margin-bottom:0;}
+.faq-group-title{font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--sage);text-transform:uppercase;margin-bottom:14px;}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;}
+.faq-item:hover{border-color:var(--border2);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:500;color:var(--text);}
+.faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;transition:transform .25s,background .2s,color .2s;}
+.faq-item.open .faq-q .faq-icon{background:var(--rose);color:#fff;transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+.faq-a-inner{padding:0 20px 18px;font-size:13.5px;color:var(--text-mid);line-height:1.7;}
 .info-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:14px;}
 .info-cta h2 em{font-style:italic;color:var(--rose);}
 .info-cta p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:26px;}
@@ -404,6 +418,7 @@ span[data-id],span[data-en]{display:inline;}
       <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
       <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
       <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
+      <li><a href="#faq"><span data-id>FAQ</span><span data-en>FAQ</span></a></li>
       <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
       <li><a href="https://maps.app.goo.gl/q4aGJihunSBLZu6q6" target="_blank"<span data-id>Lokasi</span><span data-en>Location</span></a></li>
       <li><a href="javascript:void(0)" onclick="openPricelist()">📋 Pricelist</a></li>
@@ -437,8 +452,8 @@ span[data-id],span[data-en]{display:inline;}
   </div>
   <div class="hero-note">
     <div class="dot"></div>
-    <span data-id>Buka Senin–Sabtu · 08.00–17.00 WIB</span>
-    <span data-en>Open Mon–Sat · 08:00–17:00 WIB</span>
+    <span data-id>Buka Senin–Sabtu · 08.00–17.00 WIB · Order sebelum 16.00 untuk kirim hari ini</span>
+    <span data-en>Open Mon–Sat · 08:00–17:00 WIB · Order by 16:00 for same-day delivery</span>
   </div>
 </section>
 
@@ -901,6 +916,123 @@ span[data-id],span[data-en]{display:inline;}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="stag"><span data-id>Pertanyaan Umum</span><span data-en>Common Questions</span></div>
+  <h2 class="stitle"><span data-id>Masih ada yang <em>ditanyakan?</em></span><span data-en>Still have <em>questions?</em></span></h2>
+  <div class="faq-wrap" style="margin-top:36px;">
+
+    <div class="faq-group">
+      <div class="faq-group-title"><span data-id>Pemesanan &amp; Pembayaran</span><span data-en>Ordering &amp; Payment</span></div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Bagaimana cara pesan bunga di Lavensia Florist?</span><span data-en>How do I order flowers at Lavensia Florist?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Klik tombol "Order WA", lalu chat kami untuk pilih produk, warna, dan tanggal pengiriman. 🌸</span><span data-en>Tap the "Order WA" button, then chat with us to choose the product, colors, and delivery date. 🌸</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah bisa pesan langsung / datang ke toko?</span><span data-en>Can I order in person / visit the store directly?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa banget! Kamu boleh datang langsung ke toko untuk lihat dan pilih bunga, atau chat WA dulu biar pesanan sudah siap saat kamu tiba. 😊</span><span data-en>Of course! You're welcome to visit our store directly to see and pick your flowers, or chat us on WhatsApp first so your order is ready when you arrive. 😊</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span>Metode pembayaran apa saja yang diterima?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Transfer Bank BRI &amp; BCA, QRIS, atau ShopeePay Later.</span><span data-en>Bank transfer (BRI &amp; BCA), QRIS, or ShopeePay Later.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah bisa request warna atau jenis bunga tertentu?</span><span data-en>Can I request a specific color or flower type?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa banget! Cek layanan Custom Request kami — warna, jenis bunga, dan ukuran semua bisa disesuaikan. ✨</span><span data-en>Absolutely! Check out our Custom Request service — color, flower type, and size are all customizable. ✨</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Berapa lama proses pembuatan buket?</span><span data-en>How long does it take to make a bouquet?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Rata-rata 30 menit hingga beberapa jam, tergantung tingkat kerumitan. Kami info estimasi waktunya saat chat WA.</span><span data-en>On average 30 minutes to a few hours, depending on complexity. We'll share the estimated time when you chat with us on WhatsApp.</span></div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-title"><span data-id>Pengiriman</span><span data-en>Delivery</span></div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah bisa same-day delivery / pesan hari ini sampai hari ini?</span><span data-en>Is same-day delivery available?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa, selama order dilakukan maksimal jam 16.00 WIB.</span><span data-en>Yes, as long as you order by 4:00 PM WIB at the latest.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Area pengiriman mencakup mana saja?</span><span data-en>What areas do you deliver to?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Depok dan sekitarnya, terjangkau via Grab Express. Cek estimasi ongkir di bagian "Cek Ongkir" pada halaman ini.</span><span data-en>Depok and surrounding areas, reachable via Grab Express. Check the shipping estimate in the "Check Shipping Cost" section on this page.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Bagaimana cara cek ongkos kirim?</span><span data-en>How do I check the shipping cost?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Gunakan tombol "Cek Ongkir" di web, lalu kirim screenshot hasilnya via WhatsApp.</span><span data-en>Use the "Check Shipping" button on the site, then send us a screenshot of the result via WhatsApp.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah bisa ambil sendiri (pickup) di toko?</span><span data-en>Can I pick up my order at the store?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa. Alamat toko tersedia di bagian Informasi Toko / Google Maps di bawah.</span><span data-en>Yes. The store address is available in the Store Information / Google Maps section below.</span></div></div>
+      </div>
+    </div>
+
+    <div class="faq-group">
+      <div class="faq-group-title"><span data-id>Produk</span><span data-en>Products</span></div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah bunga yang dikirim sesuai dengan foto?</span><span data-en>Will the flowers match the photos?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Kami usahakan semirip mungkin. Karena bunga alami, warna dan kondisinya bisa sedikit bervariasi tergantung ketersediaan.</span><span data-en>We aim to keep them as close as possible. Since these are natural flowers, colors and condition may vary slightly depending on availability.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Berapa lama bunga segar bisa bertahan?</span><span data-en>How long do fresh flowers last?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Umumnya 2–4 hari, tergantung jenis bunga dan cara penyimpanannya.</span><span data-en>Typically 2–4 days, depending on the flower type and how it's stored.</span></div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span><span data-id>Apakah tersedia bunga artifisial yang tidak layu?</span><span data-en>Do you offer artificial flowers that never wilt?</span></span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner"><span data-id>Ya, cek kategori Artificial Bouquet di bagian Layanan kami — awet dan tidak layu.</span><span data-en>Yes, check out our Artificial Bouquet category in the Services section — long-lasting and never wilts.</span></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- KONTAK -->
 <section id="info">
   <div class="info-wrap">
@@ -1060,6 +1192,26 @@ function toggleAllReviews(btn) {
   if (idSpan) idSpan.textContent = isHidden ? 'Sembunyikan' : 'Lihat semua ulasan';
   if (enSpan) enSpan.textContent = isHidden ? 'Hide' : 'Show all reviews';
   btn.querySelector('span:first-child').textContent = isHidden ? '↑' : '↓';
+}
+
+// ── FAQ ──
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => {
+    if (el !== item) {
+      el.classList.remove('open');
+      el.querySelector('.faq-a').style.maxHeight = null;
+    }
+  });
+  if (isOpen) {
+    item.classList.remove('open');
+    answer.style.maxHeight = null;
+  } else {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
 }
 
 // ── PETALS ──
