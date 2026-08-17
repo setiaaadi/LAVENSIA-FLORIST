@@ -237,6 +237,28 @@ section{padding:80px 6vw;}
 .care-icon{width:44px;height:44px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 14px;}
 .care-title{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
 .care-desc{font-size:12.5px;color:var(--text-mid);line-height:1.6;}
+
+/* MERDEKA THEME (17-31 Agustus) */
+.merdeka-decor{display:none;}
+body.merdeka .hero{background:linear-gradient(135deg,#FDF5EF 0%,#FBEBE2 60%,#FDF5EF 100%);}
+body.merdeka .hero-bg{opacity:0;}
+body.merdeka .merdeka-decor{display:block;}
+body.merdeka .hero-tag{color:#C43A32;}
+body.merdeka .hero h1{color:#B8342B;}
+body.merdeka .hero h1 em{color:#7A9B7E;}
+body.merdeka .hero-btns .btn-primary{background:#B8342B;box-shadow:0 6px 24px rgba(184,52,43,.28);}
+body.merdeka .hero-btns .btn-primary:hover{background:#96271F;}
+.merdeka-ribbon{position:absolute;top:-16px;left:-16px;width:180px;opacity:.92;z-index:1;pointer-events:none;}
+.merdeka-bunting{position:absolute;top:0;right:0;width:200px;opacity:.9;z-index:1;pointer-events:none;}
+.merdeka-monument{position:absolute;bottom:0;left:0;width:170px;opacity:.85;z-index:1;pointer-events:none;}
+.merdeka-flowers{position:absolute;bottom:0;right:0;width:190px;opacity:.95;z-index:1;pointer-events:none;}
+.merdeka-divider{display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0;position:relative;z-index:2;}
+.merdeka-divider .line{width:28px;height:1px;background:#D9998F;}
+.merdeka-divider .sym{color:#C43A32;font-size:11px;}
+.merdeka-tag{font-size:10px;letter-spacing:.14em;color:#B8342B;font-weight:600;text-transform:uppercase;text-align:center;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;z-index:2;}
+.merdeka-tag .line{width:16px;height:1px;background:#D9998F;}
+.merdeka-date{font-size:9.5px;color:#8a7a75;text-align:center;margin-top:2px;position:relative;z-index:2;}
+@media(max-width:640px){.merdeka-ribbon,.merdeka-bunting,.merdeka-monument,.merdeka-flowers{width:110px;opacity:.55;}}
 .info-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:14px;}
 .info-cta h2 em{font-style:italic;color:var(--rose);}
 .info-cta p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:26px;}
@@ -499,8 +521,53 @@ span[data-id],span[data-en]{display:inline;}
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="petal-wrap" id="petals"></div>
+
+  <!-- MERDEKA DECOR (17-31 Agustus) -->
+  <svg class="merdeka-decor merdeka-ribbon" viewBox="0 0 260 200" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,0 C60,10 90,40 70,80 C50,120 90,140 130,110 C160,90 190,60 260,50 L260,90 C190,100 160,130 130,150 C90,180 50,160 70,120 C90,80 60,50 0,40 Z" fill="#E8453C"/>
+    <path d="M0,10 C55,20 82,46 65,82 C48,116 82,134 118,108 C145,90 172,64 235,55 L235,72 C172,80 145,104 118,122 C82,148 48,130 65,96 C82,60 55,32 0,22 Z" fill="#fff" opacity=".9"/>
+  </svg>
+  <svg class="merdeka-decor merdeka-bunting" viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,14 Q130,-6 260,14" fill="none" stroke="#D98B85" stroke-width="1.5"/>
+    <g fill="#E8453C">
+      <polygon points="20,14 44,14 32,42"/><polygon points="60,15 84,15 72,40"/>
+      <polygon points="100,13 124,13 112,44"/><polygon points="140,14 164,14 152,41"/>
+      <polygon points="180,15 204,15 192,39"/><polygon points="220,13 244,13 232,42"/>
+    </g>
+  </svg>
+  <svg class="merdeka-decor merdeka-monument" viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="140" width="220" height="20" fill="#C43A32" opacity=".45"/>
+    <rect x="70" y="40" width="10" height="100" fill="#1E3A5F" opacity=".18"/>
+    <polygon points="70,40 75,18 80,40" fill="#1E3A5F" opacity=".18"/>
+    <g fill="#8B2E28" opacity=".7">
+      <circle cx="20" cy="120" r="8"/><rect x="12" y="128" width="16" height="26"/>
+      <circle cx="45" cy="115" r="9"/><rect x="36" y="124" width="18" height="30"/>
+      <circle cx="130" cy="118" r="8"/><rect x="122" y="126" width="16" height="28"/>
+    </g>
+    <path d="M20,120 L20,60" stroke="#8B2E28" stroke-width="2" opacity=".7"/>
+    <path d="M20,62 L48,70 Q40,78 48,88 L20,94 Z" fill="#E8453C" opacity=".8"/>
+    <path d="M45,115 L45,70" stroke="#8B2E28" stroke-width="2" opacity=".7"/>
+  </svg>
+  <svg class="merdeka-decor merdeka-flowers" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <g opacity=".9">
+      <circle cx="150" cy="150" r="26" fill="#D4537E"/>
+      <circle cx="120" cy="165" r="20" fill="#F2C6C2"/>
+      <circle cx="175" cy="120" r="18" fill="#fff" stroke="#eee" stroke-width="1"/>
+      <circle cx="100" cy="130" r="15" fill="#fff" stroke="#eee" stroke-width="1"/>
+      <circle cx="160" cy="185" r="14" fill="#E8453C" opacity=".85"/>
+      <path d="M60,200 Q90,160 130,150" stroke="#7A9B7E" stroke-width="4" fill="none"/>
+      <path d="M40,200 Q70,175 110,175" stroke="#7A9B7E" stroke-width="3" fill="none"/>
+    </g>
+  </svg>
+
   <p class="hero-tag"><span data-id>Toko Bunga Depok</span><span data-en>Flower Shop · Depok, Indonesia</span></p>
+
+  <div class="merdeka-decor merdeka-divider"><span class="line"></span><span class="sym">♥</span><span class="line"></span></div>
+
   <h1><span data-id>Bunga untuk<br/><em>setiap momen</em></span><span data-en>Flowers for<br/><em>every moment</em></span></h1>
+
+  <div class="merdeka-decor merdeka-divider"><span class="line"></span><span class="sym">★</span><span class="line"></span></div>
+
   <p>
     <span data-id>Fresh bouquet, bloombox, money bouquet, balloon box & custom — semua bisa kamu pesan langsung via WhatsApp.</span>
     <span data-en>Fresh bouquets, bloom boxes, money bouquets, balloon boxes & custom arrangements — order directly via WhatsApp.</span>
@@ -524,6 +591,8 @@ span[data-id],span[data-en]{display:inline;}
     <span data-id>Buka Senin–Sabtu · 08.00–17.00 WIB · Order sebelum 16.00 untuk kirim hari ini</span>
     <span data-en>Open Mon–Sat · 08:00–17:00 WIB · Order by 16:00 for same-day delivery</span>
   </div>
+  <div class="merdeka-decor merdeka-tag"><span class="line"></span><span data-id>Dirgahayu Republik Indonesia</span><span data-en>Happy Independence Day, Indonesia</span><span class="line"></span></div>
+  <div class="merdeka-decor merdeka-date"><span data-id>17 Agustus 1945 – 2026</span><span data-en>August 17, 1945 – 2026</span></div>
 </section>
 
 <!-- INFORMASI AWAL WEB -->
@@ -1294,6 +1363,16 @@ function toggleAllReviews(btn) {
   if (enSpan) enSpan.textContent = isHidden ? 'Hide' : 'Show all reviews';
   btn.querySelector('span:first-child').textContent = isHidden ? '↑' : '↓';
 }
+
+// ── MERDEKA THEME (17-31 Agustus 2026) ──
+(function () {
+  var start = new Date('2026-08-17T00:00:00+07:00');
+  var end = new Date('2026-09-01T00:00:00+07:00'); // berlaku sampai akhir 31 Agustus
+  var now = new Date();
+  if (now >= start && now < end) {
+    document.body.classList.add('merdeka');
+  }
+})();
 
 // ── PROMO POPUP ──
 (function () {
