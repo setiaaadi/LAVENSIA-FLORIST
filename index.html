@@ -1,1516 +1,422 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<!-- font informasi web) -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-12E1ZWQLJM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-12E1ZWQLJM');
-</script>
-
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Lavensia Florist — Toko Bunga Depok | Flower Shop Depok</title>
-<meta name="description" content="Toko bunga di Depok — buket segar, custom request, same-day delivery. Order langsung via WhatsApp."/>
-
-<!-- Open Graph (WhatsApp, Instagram, Facebook) -->
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="https://lavensia-florist.com/"/>
-<meta property="og:title" content="Lavensia Florist — Toko Bunga Depok"/>
-<meta property="og:description" content="Buket bunga segar untuk setiap momen spesial. Custom request, same-day delivery, order langsung via WhatsApp 🌸"/>
-<meta property="og:image" content="https://lavensia-florist.com/images/1_roses/a1.jpeg"/>
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
-<meta property="og:locale" content="id_ID"/>
-<meta property="og:site_name" content="Lavensia Florist"/>
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Lavensia Florist — Toko Bunga Depok"/>
-<meta name="twitter:description" content="Buket bunga segar untuk setiap momen spesial. Custom request, same-day delivery, order langsung via WhatsApp 🌸"/>
-<meta name="twitter:image" content="https://lavensia-florist.com/images/1_roses/a1.jpeg"/>
-
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Absensi Lavensia</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Absensi">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#162B4A">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  /* Background */
-  --cream:#F5F7FA;--cream2:#E9EEF5;
-  /* Primary navy */
-  --rose:#1E3A5F;--rose-dark:#152D4A;--rose-light:#C8D8EE;--rose-pale:#EBF0F8;
-  /* Accent blue */
-  --sage:#4A6FA5;--sage-light:#E4EBF5;
-  /* Pink warm accent biar tetap florist */
-  --pink:#F2C6C2;--pink-mid:#E8A8A2;
-  /* Text */
-  --text:#1A1A1A;--text-mid:#4F5B6A;--text-light:#7A8A9A;
-  /* Border */
-  --border:rgba(30,58,95,0.12);--border2:rgba(30,58,95,0.22);
+  --hutan:#162B4A; --daun:#4C7A5E; --kelopak:#E9B7BF; --bunga:#C2566B;
+  --latar:#FBF3F2; --kertas:#FFFFFF; --tinta:#25302B; --redam:#6C7A73; --garis:#E7D9D8;
 }
-html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
-
-/* NAV — 2 baris */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,247,250,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-/* Top bar */
-.nav-topbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:10px 6vw;border-bottom:1px solid var(--border);font-size:12.5px;color:var(--text-mid);}
-.nav-topbar-left{display:flex;align-items:center;gap:22px;}
-
-.nav-contact-item{display:flex;align-items:center;gap:6px;color:var(--text-mid);text-decoration:none;transition:color .2s;}
-.nav-contact-item:hover{color:var(--rose);}
-.nav-topbar-right{display:flex;align-items:center;justify-content:flex-end;gap:8px;}
-.nav-wa{background:var(--rose);color:#fff;padding:5px 16px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;}
-.nav-wa:hover{background:var(--rose-dark);transform:scale(1.03);}
-/* Mobile */
-@media (max-width: 768px){.nav-wa{ display:none; height:0; padding:0; margin:0; }}
-
-/* Bottom bar */
-.nav-bottombar{display:flex;align-items:center;justify-content:center;padding:0 6vw;height:50px;position:relative;}
-/* Mobile */
-@media (max-width: 768px){
-  .nav-bottombar{display:flex;align-items:center;justify-content:center;padding:0 6vw;height:0px;position:relative;}}
-
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--text);letter-spacing:.02em;white-space:nowrap;}
-.nav-logo span{color:var(--rose);}
-.nav-links{display:flex;gap:24px;list-style:none;margin:0 auto;}
-.nav-links a{font-size:13px;color:var(--text-mid);text-decoration:none;letter-spacing:.04em;transition:color .2s;}
-.nav-links a:hover{color:var(--rose);}
-.nav-hamburger-wrap{position:absolute;right:6vw;top:50%;transform:translateY(-50%);}
-
-/* HERO */
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:130px 24px 64px;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 55% at 50% 38%,#C8D8EE 0%,transparent 65%),radial-gradient(ellipse 45% 38% at 82% 78%,#E4EBF5 0%,transparent 60%),radial-gradient(ellipse 30% 25% at 15% 70%,#F2C6C2 0%,transparent 55%);opacity:.55;}
-.petal-wrap{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.petal{position:absolute;border-radius:50% 0 50% 0;opacity:0;animation:pfall linear infinite;}
-@keyframes pfall{0%{opacity:0;transform:translateY(-30px) rotate(0)}10%{opacity:.55}90%{opacity:.2}100%{opacity:0;transform:translateY(105vh) rotate(400deg)}}
-.hero-tag{font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--sage);text-transform:uppercase;margin-bottom:18px;animation:up .8s ease both;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,96px);font-weight:500;line-height:1;color:var(--rose);margin-bottom:22px;animation:up .8s .1s ease both;}
-.hero h1 em{color:var(--sage);font-style:italic;}
-.hero p{font-size:16px;color:var(--text-mid);max-width:440px;line-height:1.75;margin:0 auto 36px;animation:up .8s .2s ease both;}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;animation:up .8s .3s ease both;}
-.btn-primary{background:var(--rose);color:#fff;padding:14px 30px;border-radius:100px;font-size:14px;font-weight:500;text-decoration:none;box-shadow:0 6px 24px rgba(30,58,95,.3);transition:background .2s,transform .15s;}
-.btn-primary:hover{background:var(--rose-dark);transform:translateY(-2px);}
-.btn-ghost{border:1.5px solid var(--border2);color:var(--rose);padding:13px 28px;border-radius:100px;font-size:14px;text-decoration:none;background:rgba(255,255,255,.7);transition:all .2s;}
-.btn-ghost:hover{border-color:var(--sage);color:var(--sage);background:#fff;}
-
-/* Mobile: tombol hero rapi susun */
-@media(max-width:480px){
-  .hero-btns{flex-direction:column;align-items:center;gap:10px;width:100%;max-width:260px;margin:0 auto;}
-  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center;padding:14px 24px;}
-}
-.hero-note{margin-top:50px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.85);border:1px solid var(--border);border-radius:100px;padding:8px 18px;font-size:12px;color:var(--text-mid);animation:up .8s .45s ease both;}
-.hero-note .dot{width:7px;height:7px;border-radius:50%;background:var(--pink-mid);}
-@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-
-/* SECTION */
-section{padding:80px 6vw;}
-.stag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:500;letter-spacing:.15em;color:var(--rose);text-transform:uppercase;margin-bottom:12px;}
-.stag::before{content:'';display:block;width:22px;height:1px;background:var(--rose);}
-.stitle{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:500;line-height:1.15;color:var(--text);margin-bottom:10px;}
-.stitle em{font-style:italic;color:var(--rose);}
-.ssub{font-size:14px;color:var(--text-mid);max-width:480px;line-height:1.7;}
-
-/* KATALOG */
-#katalog{background:#fff;}
-.katalog-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:44px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:26px;}
-.card{border-radius:20px;overflow:hidden;background:var(--cream);border:1px solid var(--border);transition:transform .3s,box-shadow .3s;}
-.card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(30,58,95,.14);}
-
-/* SLIDER */
-.slider{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--cream2);user-select:none;}
-.slides{display:flex;height:100%;width:100%;transition:transform .38s cubic-bezier(.4,0,.2,1);will-change:transform;flex-wrap:nowrap;}
-.slide{min-width:100%;width:100%;height:100%;flex-shrink:0;flex-grow:0;}
-.slide img{width:100%;height:100%;object-fit:cover;display:block;-webkit-user-drag:none;pointer-events:none;}
-.slider-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:32px;height:32px;border-radius:50%;
-  background:rgba(255,255,255,.88);border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;color:var(--text);z-index:4;
-  box-shadow:0 2px 10px rgba(0,0,0,.15);
-  transition:opacity .2s,background .15s;opacity:0;
-  }
-.card:hover .slider-btn{opacity:1;}
-.slider-btn:hover{background:#fff;}
-.slider-btn.prev{left:9px;}
-.slider-btn.next{right:9px;}
-.slider-dots{position:absolute;bottom:9px;left:0;right:0;display:flex;justify-content:center;gap:5px;z-index:4;}
-.sdot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);border:none;cursor:pointer;padding:0;transition:background .2s,transform .2s;}
-.sdot.active{background:#fff;transform:scale(1.25);}
-.slide-count{position:absolute;top:9px;right:10px;background:rgba(0,0,0,.38);color:#fff;font-size:11px;padding:3px 8px;border-radius:100px;z-index:4;pointer-events:none;}
-
-/* CARD BODY */
-.card-body{padding:18px 20px 22px;}
-.card-cat{font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--sage);text-transform:uppercase;margin-bottom:5px;}.card-name{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text);margin-bottom:5px;}
-.card-desc{font-size:13px;color:var(--text-light);line-height:1.55;margin-bottom:18px;}
-.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-.card-price .lbl{font-size:11px;color:var(--text-light);display:block;margin-bottom:1px;}
-.card-price strong{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--text);}
-.btn-wa{background:var(--rose);color:#fff;padding:9px 16px;border-radius:100px;font-size:12px;font-weight:500;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:6px;}
-.btn-wa:hover{background:var(--rose-dark);transform:scale(1.04);}
-.btn-wa svg{width:13px;height:13px;fill:#fff;flex-shrink:0;}
-/* ONGKIR SECTION */
-.ongkir-section{background:var(--text);padding:60px 6vw;}
-.ongkir-inner{max-width:660px;margin:0 auto;text-align:center;}
-.ongkir-icon{font-size:40px;margin-bottom:16px;}
-.ongkir-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:500;color:#fff;line-height:1.2;margin-bottom:10px;}
-.ongkir-title em{font-style:italic;color:var(--rose-light);}
-.ongkir-sub{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:28px;}
-.ongkir-sub1{font-size:14px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:28px;}
-.btn-ongkir{display:inline-flex;align-items:center;gap:10px;background:var(--rose);color:#fff;padding:15px 32px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 6px 24px rgba(30,58,95,.35);transition:background .2s,transform .15s;margin-bottom:22px;}
-.btn-ongkir:hover{background:var(--rose-dark);transform:translateY(-2px);}
-.btn-ongkir svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
-.ongkir-note{display:inline-flex;align-items:flex-start;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px;font-size:13px;color:rgba(255,255,255,.62);line-height:1.65;text-align:left;max-width:500px;}
-.ongkir-note .ni{font-size:17px;flex-shrink:0;margin-top:1px;}
-
-/* LAYANAN */
-#layanan{background:var(--cream);}
-.layanan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:18px;margin-top:38px;}
-.lcard{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px 18px;transition:transform .2s,box-shadow .2s;}
-.lcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,58,95,.1);}
-.lcard .icon{font-size:26px;margin-bottom:10px;}
-.lcard .lname{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:5px;}
-.lcard .ldesc{font-size:12px;color:var(--text-light);line-height:1.55;}
-
-/* INFO */
-#info{background:linear-gradient(135deg,#EBF0F8 0%,#E9EEF5 55%,#EBF0F8 100%);}
-.info-wrap{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;}
-.iblock{margin-bottom:24px;}
-.iblock:last-child{margin-bottom:0;}
-.ilabel{font-size:11px;font-weight:500;letter-spacing:.14em;color:var(--rose);text-transform:uppercase;margin-bottom:5px;}
-.ival{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;color:var(--text);line-height:1.45;}
-.ival a{color:var(--rose);text-decoration:none;}
-.ival a:hover{text-decoration:underline;}
-.pay-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-.pay-badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--border2);border-radius:100px;padding:6px 14px 6px 8px;font-size:12.5px;font-weight:500;color:var(--text-mid);}
-.pay-badge .pico{width:22px;height:22px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.pay-badge .pico svg{width:13px;height:13px;}
-
-/* FAQ */
-#faq{background:var(--cream);}
-.faq-wrap{max-width:760px;margin:0 auto;}
-.faq-group{margin-bottom:34px;}
-.faq-group:last-child{margin-bottom:0;}
-.faq-group-title{font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--sage);text-transform:uppercase;margin-bottom:14px;}
-.faq-item{background:#fff;border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;}
-.faq-item:hover{border-color:var(--border2);}
-.faq-q{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:16px 20px;font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:500;color:var(--text);}
-.faq-q .faq-icon{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;transition:transform .25s,background .2s,color .2s;}
-.faq-item.open .faq-q .faq-icon{background:var(--rose);color:#fff;transform:rotate(45deg);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
-.faq-a-inner{padding:0 20px 18px;font-size:13.5px;color:var(--text-mid);line-height:1.7;}
-
-/* PROMO POPUP */
-.promo-overlay{position:fixed;inset:0;background:rgba(20,30,45,.55);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;}
-.promo-overlay.show{opacity:1;pointer-events:auto;}
-.promo-modal{background:#fff;border-radius:22px;max-width:380px;width:100%;position:relative;box-shadow:0 25px 70px rgba(20,30,45,.3);overflow:hidden;transform:translateY(16px) scale(.97);transition:transform .35s cubic-bezier(.2,.8,.3,1);}
-.promo-overlay.show .promo-modal{transform:translateY(0) scale(1);}
-.promo-close{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:rgba(30,58,95,.07);border:none;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--text-mid);cursor:pointer;z-index:2;transition:background .2s;}
-.promo-close:hover{background:rgba(30,58,95,.14);}
-.promo-flag-bar{height:4px;background:linear-gradient(90deg,#E8453C 50%,#fff 50%);}
-.promo-top{background:linear-gradient(135deg,var(--rose-pale) 0%,var(--cream2) 100%);padding:30px 28px 22px;text-align:center;}
-.promo-badge{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid rgba(232,69,60,.28);border-radius:100px;padding:5px 14px;font-size:10.5px;font-weight:600;letter-spacing:.09em;color:#E8453C;text-transform:uppercase;margin-bottom:16px;}
-.promo-heading{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--rose);line-height:1.5;}
-.promo-amount{font-size:40px;font-weight:600;color:var(--rose);display:block;}
-.promo-sub{font-size:12.5px;color:var(--text-mid);margin-top:6px;}
-.promo-body{padding:20px 28px 28px;}
-.promo-extra{display:flex;align-items:flex-start;gap:10px;background:var(--cream);border-radius:12px;padding:12px 14px;margin-bottom:14px;}
-.promo-extra .dot{width:8px;height:8px;border-radius:50%;background:var(--pink-mid);flex-shrink:0;margin-top:5px;}
-.promo-extra-text{font-size:12.5px;color:var(--text);line-height:1.55;}
-.promo-dates{text-align:center;font-size:11.5px;color:var(--text-light);margin-bottom:18px;}
-.promo-cta{display:block;background:var(--rose);color:#fff;text-align:center;padding:13px;border-radius:100px;font-size:13.5px;font-weight:500;text-decoration:none;transition:background .2s;}
-.promo-cta:hover{background:var(--rose-dark);}
-
-/* CARE TIPS */
-#care{background:linear-gradient(135deg,var(--cream) 0%,var(--cream2) 100%);}
-.care-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;max-width:1000px;margin:0 auto;}
-.care-card{background:#fff;border-radius:16px;padding:26px 22px;text-align:center;border:1px solid var(--border);}
-.care-icon{width:44px;height:44px;border-radius:50%;background:var(--rose-pale);color:var(--rose);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 14px;}
-.care-title{font-size:14.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
-.care-desc{font-size:12.5px;color:var(--text-mid);line-height:1.6;}
-.info-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,42px);font-weight:500;color:var(--text);line-height:1.2;margin-bottom:14px;}
-.info-cta h2 em{font-style:italic;color:var(--rose);}
-.info-cta p{font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:26px;}
-.btn-wa-big{display:inline-flex;align-items:center;gap:10px;background:var(--rose);color:#fff;padding:15px 30px;border-radius:100px;font-size:15px;font-weight:500;text-decoration:none;box-shadow:0 8px 28px rgba(30,58,95,.3);transition:background .2s,transform .15s;}
-.btn-wa-big:hover{background:var(--rose-dark);transform:translateY(-2px);}
-.btn-wa-big svg{width:20px;height:20px;fill:#fff;}
-
-/* FOOTER */
-footer{background:var(--text);color:rgba(255,255,255,.5);text-align:center;padding:32px 24px;font-size:13px;line-height:1.8;}
-footer strong{color:rgba(255,255,255,.9);}
-footer a{color:var(--rose-light);text-decoration:none;}
-
-/* FLOAT WA */
-.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45);text-decoration:none;animation:wapulse 2.8s ease infinite;transition:transform .2s;}
-.wa-float:hover{transform:scale(1.12);}
-.wa-float svg{width:28px;height:28px;fill:#fff;}
-@keyframes wapulse{0%,100%{box-shadow:0 6px 20px rgba(37,211,102,.45)}50%{box-shadow:0 6px 32px rgba(37,211,102,.65),0 0 0 9px rgba(37,211,102,.1)}}
-
-/* FLOAT MUSIC */
-.music-float {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: #25D366;
-  color: white;
-  font-size: 20px;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,.2);
-}
-
-/* LANG TOGGLE */
-.lang-toggle{display:flex;align-items:center;gap:4px;background:var(--cream2);border:1px solid var(--border2);border-radius:100px;padding:3px;margin-right:8px;}
-.lang-btn{padding:4px 10px;border-radius:100px;font-size:12px;font-weight:500;color:var(--text-mid);background:transparent;border:none;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif;}
-.lang-btn.active{background:var(--rose);color:#fff;box-shadow:0 1px 4px rgba(30,58,95,.2);}
-
-/* MAPS BUTTON */
-.btn-maps{display:inline-flex;align-items:center;gap:7px;border:1.5px solid rgba(30,58,95,.25);color:var(--rose);padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;background:transparent;margin-top:10px;transition:all .2s;}
-.btn-maps:hover{background:var(--rose);color:#fff;border-color:var(--rose);}
-.btn-maps svg{width:14px;height:14px;flex-shrink:0;}
-
-/* BILINGUAL helpers */
-[data-en]{display:block;}
-body.en [data-id]{display:none!important;}
-body.en [data-en]{display:block!important;}
-body:not(.en) [data-en]{display:none!important;}
-body:not(.en) [data-id]{display:block!important;}
-/* inline spans */
-span[data-id],span[data-en]{display:inline;}
-/* for elements that should show inline when active */
-.nav-links a span[data-id], .nav-links a span[data-en]{display:inline;}
-
-/* HAMBURGER BUTTON */
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:38px;height:38px;background:transparent;border:1.5px solid var(--border2);border-radius:10px;cursor:pointer;padding:0;transition:background .2s;}
-.nav-hamburger:hover{background:var(--rose-pale);}
-.nav-hamburger span{display:block;width:18px;height:2px;background:var(--rose);border-radius:2px;transition:all .25s;}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-@media(max-width:768px){
-  .nav-hamburger{display:flex;}
-  .nav-topbar-left .nav-contact-item:last-child{display:none;}
-  .nav-links{
-    display:none;
-    position:absolute;top:100%;left:0;right:0;
-    background:rgba(245,247,250,.98);
-    backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--border);
-    flex-direction:column;
-    gap:0;
-    padding:8px 0 12px;
-    z-index:99;
-  }
-  .nav-links.open{display:flex;}
-  .nav-links li{width:100%;}
-  .nav-links a{display:block;padding:12px 24px;font-size:14px;border-bottom:1px solid var(--border);}
-  .nav-links li:last-child a{border-bottom:none;}
-  .info-wrap{grid-template-columns:1fr;}
-  .grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:480px){.grid{grid-template-columns:1fr;}}
-
-/* ── PRICELIST MODAL ── */
-.btn-pricelist{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--rose);padding:13px 22px;border-radius:100px;font-size:14px;background:rgba(255,255,255,.7);transition:all .2s;cursor:pointer;font-family:'DM Sans',sans-serif;}
-.btn-pricelist:hover{border-color:var(--sage);color:var(--sage);background:#fff;}
-/* PRICELIST MODAL */
-.modal-overlay{
-  position:fixed;inset:0;z-index:500;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(5px);
-  display:flex;align-items:center;justify-content:center;
-  padding:16px;
-  opacity:0;
-  visibility:hidden;        /* iOS fix: benar-benar sembunyikan, bukan cuma transparent */
-  pointer-events:none;
-  transition:opacity .25s, visibility .25s;
-}
-.modal-overlay.open{
-  opacity:1;
-  visibility:visible;       /* iOS fix: munculkan kembali saat open */
-  pointer-events:all;
-}
-.modal-box{background:#fff;border-radius:20px;width:100%;max-width:880px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(24px);transition:transform .25s;box-shadow:0 24px 60px rgba(0,0,0,.25);}
-.modal-overlay.open .modal-box{transform:translateY(0);}
-.modal-head{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border);flex-shrink:0;}
-.modal-head h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--rose);}
-.modal-close{width:32px;height:32px;border-radius:50%;border:none;background:var(--cream2);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;color:var(--text-mid);transition:background .15s;flex-shrink:0;}
-.modal-close:hover{background:var(--rose);color:#fff;}
-.modal-tabs{display:flex;gap:8px;padding:12px 20px;border-bottom:1px solid var(--border);flex-shrink:0;background:var(--cream);flex-wrap:wrap;}
-.mtab{padding:8px 16px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;border:1.5px solid var(--border2);color:var(--text-mid);background:#fff;font-family:'DM Sans',sans-serif;transition:all .18s;}
-.mtab.active{background:var(--rose);color:#fff;border-color:var(--rose);}
-.mtab:hover:not(.active){border-color:var(--rose);color:var(--rose);}
-.modal-body{flex:1;overflow:hidden;position:relative;background:var(--cream);}
-.pdf-frame{position:absolute;inset:0;width:100%;height:100%;border:none;display:none;}
-.pdf-frame.active{display:block;}
-.pdf-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;font-size:14px;color:var(--text-mid);}
-.pdf-loading .spin{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--rose);border-radius:50%;animation:spin .7s linear infinite;}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* ── INFORMASI AWAL WEB ── */
-.features{
-    max-width:1400px;
-    margin:auto;
-    padding:100px 80px;
-    display:grid;
-    grid-template-columns:repeat(5,minmax(180px,1fr));
-    gap:30px;
-    background:#f5f6fa;
-}
-
-.feature-item p{
-    margin-top:20px;
-}
-
-.feature-head{
-    display:flex;
-    gap:15px;
-    align-items:flex-start;
-}
-
-.feature-icon{
-    font-size:38px;
-    color:#193b73;
-    margin-bottom:24px;
-}
-
-.feature-item h3{
-    font-family:"Cormorant Garamond", serif;
-    font-size:30px;
-    font-weight:500;
-    line-height:1.25;
-    color:#1f2430;
-    margin:0 0 20px;
-    min-height:78px; /* supaya semua sejajar */
-}
-
-.feature-item p{
-    font-family:"Poppins", sans-serif;
-    font-size:16px;
-    line-height:2;
-    color:#6f7c91;
-    margin:0;
-}
-
-/* Tablet */
-@media(max-width:1024px){
-    .features{
-        grid-template-columns:repeat(2,1fr);
-        gap:50px;
-        padding:80px 40px;
-    }
-}
-
-/* Mobile */
-@media(max-width:768px){
-    .features{
-        grid-template-columns:1fr;
-        padding:60px 25px;
-        gap:40px;
-    }
-
-    .feature-item{
-        align-items:center;
-        text-align:center;
-    }
-
-    .feature-item h3{
-        min-height:auto;
-        font-size:26px;
-    }
-}
-
+*{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--latar);color:var(--tinta);min-height:100vh;padding-bottom:env(safe-area-inset-bottom)}
+.atas{background:var(--hutan);color:#fff;padding:calc(14px + env(safe-area-inset-top)) 22px 64px}
+.atas{text-align:center}
+.logo{display:block;width:190px;max-width:55%;height:auto;margin:0 auto}
+.jam{font-family:Georgia,serif;font-size:52px;line-height:1.05;margin-top:6px;font-variant-numeric:tabular-nums}
+.tgl{margin-top:4px;color:#C9D3E3;font-size:15px}
+main{max-width:480px;margin:-40px auto 0;padding:0 16px 32px}
+.kartu{background:var(--kertas);border-radius:18px;padding:18px;box-shadow:0 6px 24px rgba(30,59,47,.10)}
+.mode{display:grid;grid-template-columns:1fr 1fr;background:var(--latar);border-radius:12px;padding:4px;gap:4px}
+.mode button{border:0;background:transparent;padding:12px;border-radius:9px;font-size:16px;font-weight:600;color:var(--redam)}
+.mode button.aktif{background:var(--hutan);color:#fff}
+.judul{display:block;font-size:14px;color:var(--redam);margin:18px 0 8px}
+#pilihNama,#jenis{width:100%;padding:14px;border:1.5px solid var(--garis);border-radius:12px;font-size:16px;font-weight:600;background:#fff;color:var(--tinta)}
+#pin{width:100%;padding:14px;border:1.5px solid var(--garis);border-radius:12px;font-size:18px;letter-spacing:6px;background:#fff;color:var(--tinta)}
+#pin:focus-visible{outline:3px solid var(--kelopak)}
+#kamera{position:fixed;inset:0;z-index:50;background:rgba(20,30,25,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:16px}
+#kamera video{width:100%;max-width:560px;border-radius:16px;background:#000;transform:scaleX(-1)}
+#kamera .aksi{display:flex;gap:12px}
+#kamera button{border:0;border-radius:12px;padding:14px 22px;font-size:16px;font-weight:700}
+#jepret{background:var(--bunga);color:#fff}
+#batalKamera{background:#fff;color:var(--tinta)}
+#pilihNama:focus-visible,#jenis:focus-visible{outline:3px solid var(--kelopak)}
+.nama button{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left;width:100%;padding:13px 14px;border:1.5px solid var(--garis);border-radius:12px;background:#fff;font-size:15px;font-weight:600;color:var(--tinta)}
+.nama button.pilih{border-color:var(--hutan);background:#EEF5F0}
+.nama .st{flex:none;font-size:12px;font-weight:600;padding:4px 9px;border-radius:99px;background:var(--latar);color:var(--redam)}
+.st.masuk{background:#E3F1E8;color:#1E5136}
+.st.selesai{background:#E6E8F5;color:#2F3A7A}
+.st.cuti{background:#FBE3E6;color:#8E2A3C}
+button:focus-visible,input:focus-visible{outline:3px solid var(--kelopak)}
+.info{margin-top:14px;padding:12px 14px;border-radius:12px;background:var(--latar);font-size:15px}
+.foto{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;width:100%;aspect-ratio:4/3;border:2px dashed var(--kelopak);border-radius:14px;background:var(--latar);color:var(--bunga);font-weight:600;overflow:hidden;cursor:pointer;position:relative}
+.foto small{color:var(--redam);font-weight:400}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#ambilFoto{display:none}
+.tanggal{display:block}
+.tanggal label{font-size:13px;color:var(--redam)}
+.tanggal input{width:100%;margin-top:4px;padding:12px;border:1.5px solid var(--garis);border-radius:12px;font-size:16px;background:#fff;color:var(--tinta)}
+.lokasi{margin-top:14px;font-size:14px;color:var(--redam)}
+.lokasi.ok{color:var(--daun)} .lokasi.gagal{color:var(--bunga)}
+.kirim{margin-top:18px;width:100%;border:0;border-radius:14px;padding:17px;font-size:18px;font-weight:700;background:var(--bunga);color:#fff}
+.kirim:disabled{opacity:.5}
+.pesan{margin-top:14px;padding:12px 14px;border-radius:12px;font-size:15px;display:none}
+.pesan.ok{display:block;background:#E3F1E8;color:#1E5136}
+.pesan.err{display:block;background:#FBE3E6;color:#8E2A3C}
+h2{font-family:Georgia,serif;font-weight:normal;font-size:19px;margin:26px 4px 10px}
+.baris{display:flex;justify-content:space-between;gap:10px;padding:12px 4px;border-bottom:1px solid var(--garis);font-size:15px}
+.baris:last-child{border-bottom:0}
+.baris .w{color:var(--redam);font-variant-numeric:tabular-nums;text-align:right;flex:none}
+.kosong{color:var(--redam);font-size:14px;padding:8px 4px}
+.chip{flex:none;font-size:12px;font-weight:600;padding:4px 9px;border-radius:99px;background:var(--latar);color:var(--redam)}
+.cutiBaris{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--garis);font-size:15px}
+.cutiBaris:last-child{border-bottom:0}
+.hidden,#kamera.hidden{display:none}
 </style>
 </head>
 <body>
+<header class="atas">
+  <img class="logo" alt="Lavensia Florist" src="data:image/jpeg;base64,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apduxSyY7iCZuxKes0MtvOD5dalKKfprWvTVZrHcQ4RarmmqZMPGtmsXIuQIuO298PRrE2pDyknaTIWQVj/VCUj79iqDr9UpSlFSlFSidkk7JNflb44USpKVXJtm3HBn/sa5Z/3Vy/uhWo9TXHuUMwsODTcKts2M3ZZodD7SoyVKIdGl6Ue42KhVUxY3Dpv5LXapJL4BPbvV7+HXjCOw41ydn5as+MWsiRG97HQZbg7oIB7lAPceqiABvvVZYrmSMbjtKg4pjki4NEqTPmx1yHAd7B6FL9mCPmE11s1zbKszlpk5Ne5VwKP8W2tXS03/ABUJ0lP4Clq79q6Ky5nt9kt8Q/KT/JuXJfjJdYskAKbt7K+ylb+06oeilaHb0AA+dVjSlaRKhaRDp09sUpSrEClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQClKUApSlAKUpQH//Z">
+  <div class="jam" id="jam">--:--</div>
+  <div class="tgl" id="tgl"></div>
+</header>
 
-<!-- PROMO POPUP -->
-<div class="promo-overlay" id="promoOverlay">
-  <div class="promo-modal">
-    <button class="promo-close" onclick="closePromo()" aria-label="Close">✕</button>
-    <div class="promo-flag-bar"></div>
-    <div class="promo-top">
-      <div class="promo-badge">🇮🇩 <span data-id>Edisi Kemerdekaan · 81 Tahun RI</span><span data-en>Independence Edition · Indonesia's 81st</span></div>
-      <div class="promo-heading">
-        <span data-id>Potongan Harga</span><span data-en>Price Discount</span><br>
-        <span class="promo-amount">Rp20.000</span>
+<main>
+  <section class="kartu">
+    <div class="mode">
+      <button id="tabAbsen" class="aktif" type="button">Absen</button>
+      <button id="tabCuti" type="button">Tidak hadir</button>
+    </div>
+
+    <span class="judul">Pilih nama</span>
+    <select id="pilihNama"></select>
+
+    <span class="judul">PIN</span>
+    <input id="pin" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="4 angka">
+
+    <!-- Absen -->
+    <div id="panelAbsen">
+      <div class="info hidden" id="info"></div>
+      <span class="judul">Foto selfie</span>
+      <label class="foto" for="ambilFoto" id="kotakFoto">
+        <span>Ketuk untuk foto selfie</span>
+        <small>Kamera depan akan terbuka</small>
+      </label>
+      <input id="ambilFoto" type="file" accept="image/*" capture="user">
+      <div class="lokasi" id="lokasi">Lokasi akan dicek saat kirim.</div>
+      <button class="kirim" id="kirimAbsen" type="button" disabled>Pilih nama dulu</button>
+    </div>
+
+    <!-- Cuti / Izin / Sakit -->
+    <div id="panelCuti" class="hidden">
+      <div class="info hidden" id="infoCuti"></div>
+      <div id="daftarCuti" class="hidden" style="margin-top:14px"></div>
+      <span class="judul">Jenis</span>
+      <select id="jenis"><option value="Cuti">Cuti</option><option value="Izin">Izin</option><option value="Sakit">Sakit</option></select>
+      <div class="tanggal" style="margin-top:14px">
+        <label>Tanggal<input type="date" id="tglCuti"></label>
       </div>
-      <div class="promo-sub"><span data-id>untuk pembelian minimal Rp250.000</span><span data-en>for a minimum purchase of Rp250,000</span></div>
+      <button class="kirim" id="kirimCuti" type="button" disabled>Pilih nama dulu</button>
     </div>
-    <div class="promo-body">
-      <div class="promo-dates"><span data-id>Merdeka Sale · Berlaku 18 – 20 Agustus 2026</span><span data-en>Merdeka Sale · Valid Aug 18 – 20, 2026</span></div>
-      <a class="promo-cta" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank" onclick="closePromo()">
-        <span data-id>Order Sekarang via WhatsApp</span><span data-en>Order Now via WhatsApp</span>
-      </a>
-    </div>
-  </div>
+
+    <div class="pesan" id="pesan"></div>
+  </section>
+
+  <h2>Hari ini</h2>
+  <section class="kartu" id="hariIni"><div class="kosong">Memuat…</div></section>
+</main>
+
+<div id="kamera" class="hidden">
+  <video id="vid" autoplay playsinline muted></video>
+  <div class="aksi"><button type="button" id="jepret">Ambil foto</button><button type="button" id="batalKamera">Batal</button></div>
 </div>
-
-<!-- NAV -->
-<nav>
-  <!-- TOP BAR: Order WA kiri + Lavensia Florist tengah + lang toggle kanan -->
-  <div class="nav-topbar">
-    <div class="nav-topbar-left">
-      <a class="nav-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><span data-id>Order WA</span><span data-en>Order WA</span></a>
-	<div>
-	<button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-	  </div>
-	</div>
-    <div class="nav-logo">Lavensia <span>Florist</span></div>
-    <div class="nav-topbar-right">
-      <div class="lang-toggle">
-        <button class="lang-btn active" id="btn-id" onclick="setLang('id')">ID</button>
-        <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
-      </div>
-    </div>
-  </div>
-  <!-- BOTTOM BAR: menu navigasi -->
-  <div class="nav-bottombar">
-    <ul class="nav-links">
-      <li><a href="#katalog"><span data-id>Katalog</span><span data-en>Catalog</span></a></li>
-      <li><a href="#ongkir"><span data-id>Cek Ongkir</span><span data-en>Shipping</span></a></li>
-      <li><a href="#layanan"><span data-id>Layanan</span><span data-en>Services</span></a></li>
-      <li><a href="#faq"><span data-id>FAQ</span><span data-en>FAQ</span></a></li>
-      <li><a href="#info"><span data-id>Kontak</span><span data-en>Contact</span></a></li>
-      <li><a href="https://maps.app.goo.gl/q4aGJihunSBLZu6q6" target="_blank"<span data-id>Lokasi</span><span data-en>Location</span></a></li>
-      <li><a href="javascript:void(0)" onclick="openPricelist()">📋 Pricelist</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="petal-wrap" id="petals"></div>
-  <p class="hero-tag"><span data-id>Toko Bunga Depok</span><span data-en>Flower Shop · Depok, Indonesia</span></p>
-  <h1><span data-id>Bunga untuk<br/><em>setiap momen</em></span><span data-en>Flowers for<br/><em>every moment</em></span></h1>
-  <p>
-    <span data-id>Fresh bouquet, bloombox, money bouquet, balloon box & custom — semua bisa kamu pesan langsung via WhatsApp.</span>
-    <span data-en>Fresh bouquets, bloom boxes, money bouquets, balloon boxes & custom arrangements — order directly via WhatsApp.</span>
-  </p>
-  <div class="hero-btns">
-    <a class="btn-primary" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank">
-      <span data-id>🌸 Pesan Sekarang </span><span data-en>🌸 Order Now</span>
-    </a>
-    <a class="btn-primary" href="#katalog">
-      <span data-id>Lihat Katalog</span><span data-en>View Catalog</span>
-    </a>
-	<button class="btn-primary" onclick="openPricelist()">
-      <span data-id>Lihat Pricelist</span><span data-en>View Pricelist</span>
-    </button>
-    <a class="btn-primary" href="https://www.instagram.com/lavensia.florist/" target="_blank">
-      <span data-id>Lihat Instagram 🌸</span><span data-en>View Instagram 🌸</span>
-    </a>
-  </div>
-  <div class="hero-note">
-    <div class="dot"></div>
-    <span data-id>Buka Senin–Sabtu · 08.00–17.00 WIB · Order sebelum 16.00 untuk kirim hari ini</span>
-    <span data-en>Open Mon–Sat · 08:00–17:00 WIB · Order by 16:00 for same-day delivery</span>
-  </div>
-</section>
-
-<!-- INFORMASI AWAL WEB -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<section class="features">
-    
-    <div class="feature-item">
-    <div class="feature-head">
-        <i class="fa-solid fa-seedling feature-icon"></i>
-        <h3>
-            <span data-id="Bunga Segar Berkualitas">Bunga Segar Berkualitas</span>
-            <span data-en="Fresh Quality Flowers">Fresh Quality Flowers</span>
-        </h3>
-    </div>
-
-    <p>
-        <span data-id="Setiap rangkaian dibuat menggunakan bunga pilihan untuk menjaga keindahan dan kesegarannya.">
-            Setiap rangkaian dibuat menggunakan bunga pilihan untuk menjaga keindahan dan kesegarannya.
-        </span>
-        <span data-en="Every arrangement is crafted using carefully selected flowers to ensure lasting beauty and freshness.">
-            Every arrangement is crafted using carefully selected flowers to ensure lasting beauty and freshness.
-        </span>
-    </p>
-</div>
-
-<div class="feature-item">
-    <div class="feature-head">
-        <i class="fa-regular fa-clock feature-icon"></i>
-        <h3>
-            <span data-id="Pesanan Fleksibel">Pesanan Fleksibel</span>
-            <span data-en="Flexible Orders">Flexible Orders</span>
-        </h3>
-    </div>
-
-    <p>
-        <span data-id="Melayani pemesanan mendadak dengan proses yang cepat dan mudah.">
-            Melayani pemesanan mendadak dengan proses yang cepat dan mudah.
-        </span>
-        <span data-en="We accommodate last-minute orders with a quick and hassle-free process.">
-            We accommodate last-minute orders with a quick and hassle-free process.
-        </span>
-    </p>
-</div>
-
-<div class="feature-item">
-    <div class="feature-head">
-        <i class="fa-solid fa-truck-fast feature-icon"></i>
-        <h3>
-            <span data-id="Pengiriman Cepat">Pengiriman Cepat</span>
-            <span data-en="Fast Delivery">Fast Delivery</span>
-        </h3>
-    </div>
-
-    <p>
-        <span data-id="Layanan pengiriman di hari yang sama untuk memastikan momen spesialmu tetap tepat waktu.">
-            Layanan pengiriman di hari yang sama untuk memastikan momen spesialmu tetap tepat waktu.
-        </span>
-        <span data-en="Same-day delivery service to ensure your special moments arrive right on time.">
-            Same-day delivery service to ensure your special moments arrive right on time.
-        </span>
-    </p>
-</div>
-
-<div class="feature-item">
-    <div class="feature-head">
-        <i class="fa-regular fa-comments feature-icon"></i>
-        <h3>
-            <span data-id="Konsultasi Florist Gratis">Konsultasi Florist Gratis</span>
-            <span data-en="Free Florist Consultation">Free Florist Consultation</span>
-        </h3>
-    </div>
-
-    <p>
-        <span data-id="Dapatkan saran profesional untuk memilih bunga yang paling sesuai dengan acara dan kebutuhanmu.">
-            Dapatkan saran profesional untuk memilih bunga yang paling sesuai dengan acara dan kebutuhanmu.
-        </span>
-        <span data-en="Get professional recommendations to choose the perfect flowers for your occasion and needs.">
-            Get professional recommendations to choose the perfect flowers for your occasion and needs.
-        </span>
-    </p>
-</div>
-
-<div class="feature-item">
-    <div class="feature-head">
-        <i class="fa-solid fa-award feature-icon"></i>
-        <h3>
-            <span data-id="Kepuasan Pelanggan">Kepuasan Pelanggan</span>
-            <span data-en="Customer Satisfaction">Customer Satisfaction</span>
-        </h3>
-    </div>
-
-    <p>
-        <span data-id="Kami berkomitmen memberikan produk dan layanan terbaik untuk pengalaman berbelanja yang menyenangkan.">
-            Kami berkomitmen memberikan produk dan layanan terbaik untuk pengalaman berbelanja yang menyenangkan.
-        </span>
-        <span data-en="We are committed to delivering the best products and services for a pleasant shopping experience.">
-            We are committed to delivering the best products and services for a pleasant shopping experience.
-        </span>
-    </p>
-</div>
-
-</section>
-<!-- ══════════════════════════════════════════════════════
-     KATALOG PRODUK
-
-     CARA GANTI / TAMBAH FOTO PER PRODUK:
-     - Setiap produk punya array foto di data-images='[...]'
-     - Isi dengan link dari imgbb.com (Direct link) atau path lokal
-     - Pisahkan dengan koma di dalam array JSON
-     - Contoh lokal  : "foto/produk1a.jpg","foto/produk1b.jpg"
-     - Contoh imgbb  : "https://i.ibb.co/xxx/foto.jpg"
-     - Minimal 1 foto, bisa sampai sebanyak yang kamu mau
-     ══════════════════════════════════════════════════════ -->
-<section id="katalog">
-  <div class="katalog-header">
-    <div>
-      <div class="stag"><span data-id>Katalog Produk</span><span data-en>Our Products</span></div>
-      <h2 class="stitle"><span data-id>Pilihan <em>bunga</em> kami</span><span data-en>Our <em>flower</em> collection</span></h2>
-      <p class="ssub">
-        <span data-id>Geser foto untuk lihat lebih banyak. Klik "Order WA" untuk langsung chat & tanya harga.</span>
-        <span data-en>Swipe photos to see more. Click "Order WA" to chat & ask for pricing.</span>
-      </p>
-    </div>
-  </div>
-
-  <div class="grid">
-
-    <!-- ═══ PRODUK 1 — ═══
-         Ganti foto: isi array di data-images dengan link foto kamu -->
-    <div class="card" data-images='[
-      "images/1_roses/a1.jpeg",
-	  "images/1_roses/a2.jpeg",
-	  "images/1_roses/a3.jpeg",
-	  "images/1_roses/a4.jpeg",
-	  "images/1_roses/a5.jpeg",
-	  "images/1_roses/a6.jpeg",
-	  "images/1_roses/a7.jpeg",
-	  "images/1_roses/a8.jpeg",
-	  "images/1_roses/a9.jpeg",
-	  "images/1_roses/a10.jpeg",
-	  "images/1_roses/a11.jpeg",
-	  "images/1_roses/a12.jpeg"
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-name">Roses Fresh Bouquet</div>
-        <div class="card-desc">Roses cantik untuk momen spesial, tersedia berbagai pilihan warna & ukuran </div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRODUK 2 — FRESH BOUQUET ═══ -->
-    <div class="card" data-images='[
-      "images/2_thumbelina_fresh/b1.jpeg",
-	  "images/2_thumbelina_fresh/b2.jpeg",
-	  "images/2_thumbelina_fresh/b3.jpeg",
-	  "images/2_thumbelina_fresh/b4.jpeg",
-	  "images/2_thumbelina_fresh/b5.jpeg",
-	  "images/2_thumbelina_fresh/b6.jpeg"
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-name">Thumbelina Fresh Bouquet</div>
-        <div class="card-desc">Buket bunga segar pilihan, cocok untuk hadiah ulang tahun, wisuda & anniversary.</div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRODUK 3 — BLOOM BOX ═══ -->
-    <div class="card" data-images='[
-      "images/3_aster/c1.jpeg",
-	  "images/3_aster/c2.jpeg",
-	  "images/3_aster/c3.jpeg",
-	  "images/3_aster/c4.jpeg",
-	  "images/3_aster/c5.jpeg",
-	  "images/3_aster/c6.jpeg",
-	  "images/3_aster/c7.jpeg",
-	  "images/3_aster/c8.jpeg",
-	  "images/3_aster/c9.jpeg",
-	  "images/3_aster/c10.jpeg",
-	  "images/3_aster/c11.jpeg",
-	  "images/3_aster/c12.jpeg"
-	  
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-name">ASTER Fresh Bouquet</div>
-        <div class="card-desc">Rangkaian Aster Bunga Simple Elegan dan Berkesan.</div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRODUK 4 — MONEY BOUQUET ═══ -->
-    <div class="card" data-images='[
-      "images/4_money/d1.jpeg",	  "images/4_money/d2.jpeg",
-	  "images/4_money/d3.jpeg",	  "images/4_money/d4.jpeg",
-	  "images/4_money/d5.jpeg",	  "images/4_money/d6.jpeg",
-	  "images/4_money/d7.jpeg",	  "images/4_money/d8.jpeg",
-	  "images/4_money/d9.jpeg",	  "images/4_money/d10.jpeg",
-	  "images/4_money/d11.jpeg",  "images/4_money/d12.jpeg",
-	  "images/4_money/d13.jpeg",  "images/4_money/d14.jpeg"
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Money Bouquet</div>
-        <div class="card-name">Money Bouquet</div>
-        <div class="card-desc">Buket unik dari uang kertas, hadiah yang cantik sekaligus bermanfaat.</div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRODUK 5 — BALLOON BOX ═══ -->
-    <div class="card" data-images='[
-      "images/5_balon_box/e1.jpeg",	  	"images/5_balon_box/e2.jpeg",
-	  "images/5_balon_box/e3.jpeg",		"images/5_balon_box/e4.jpeg",
-	  "images/5_balon_box/e5.jpeg",		"images/5_balon_box/e6.jpeg",
-	  "images/5_balon_box/e7.jpeg",	  	"images/5_balon_box/e8.jpeg",
-	  "images/5_balon_box/e9.jpeg",		"images/5_balon_box/e10.jpeg",
-	  "images/5_balon_box/e11.jpeg",	"images/5_balon_box/e12.jpeg",
-	  "images/5_balon_box/e13.jpeg"
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Balloon Box</div>
-        <div class="card-name">Balloon Box</div>
-        <div class="card-desc">Kombinasi balon dan bunga dalam box, cocok untuk ulang tahun & wisuda.</div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ PRODUK 6 — CUSTOM BOUQUET ═══ -->
-    <div class="card" data-images='[
-      "images/6_buket_req/f1.jpeg",	  	"images/6_buket_req/f2.jpeg",
-	  "images/6_buket_req/f3.jpeg",		"images/6_buket_req/f4.jpeg",
-	  "images/6_buket_req/f5.jpeg",	  	"images/6_buket_req/f6.jpeg",
-	  "images/6_buket_req/f7.jpeg",		"images/6_buket_req/f8.jpeg",
-	  "images/6_buket_req/f9.jpeg",	  	"images/6_buket_req/f10.jpeg",
-	  "images/6_buket_req/f11.jpeg",	"images/6_buket_req/f12.jpeg",
-	  "images/6_buket_req/f13.jpeg",	"images/6_buket_req/f14.jpeg",
-	  "images/6_buket_req/f15.jpeg",	"images/6_buket_req/f16.jpeg"
-    ]'>
-      <div class="slider"><div class="slides"></div>
-        <button class="slider-btn prev" aria-label="Prev">&#8592;</button>
-        <button class="slider-btn next" aria-label="Next">&#8594;</button>
-        <div class="slider-dots"></div>
-        <div class="slide-count"></div>
-      </div>
-      <div class="card-body">
-        <div class="card-cat">Custom</div>
-        <div class="card-name">Custom Bouquet</div>
-        <div class="card-desc">Request warna, jenis bunga & ukuran sesukamu — kami wujudkan sesuai keinginanmu.</div>
-        <div class="card-foot">
-          <div class="card-price"></div>
-          <a class="btn-wa" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Order WA</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /grid -->
-</section>
-
-<!-- CEK ONGKIR -->
-<div class="ongkir-section" id="ongkir">
-  <div class="ongkir-inner">
-    <div class="ongkir-icon">🚚</div>
-    <h2 class="ongkir-title">
-      <span data-id>Mau tahu biaya<br/><em>ongkos kirimnya?</em></span>
-      <span data-en>Want to know your<br/><em>delivery cost?</em></span>
-    </h2>
-	
-    <div class="ongkir-sub">
-      <span data-id>Isi data pengiriman kamu di aplikasi Grab, lalu konfirmasi ke kami via WhatsApp agar kami bantu cek ongkirnya.</span>
-      <span data-en>Fill in your delivery details in the Grab app, then confirm with us via WhatsApp so we can help check the delivery fee.</span>
-    </div>
-
-    <div class="ongkir-sub1">
-      <div class="ostep">
-		<div class="ostep-text">
-          <span data-id><strong>1.</strong> Klik tombol <strong>"Cek Ongkir via Grab"</strong> di bawah dan isi detail pengirimanmu di halaman Grab.</span>
-          <span data-en><strong>1.</strong> Click the <strong>"Check Shipping via Grab"</strong> button below and fill in your delivery details on the Grab page.</span>
-        </div>
-      </div>
-      <div class="ostep">
-        <div class="ostep-text">
-          <span data-id><strong>2. Screenshot</strong> halaman yang menampilkan <strong>"Delivery details have been shared with the sender!"</strong> dari Aplikasi Grab.</span>
-          <span data-en><strong>2. Take a screenshot</strong> The page that displays <strong>“Delivery details have been shared with the sender!”</strong> from the Grab app.</span>
-        </div>
-      </div>
-      <div class="ostep">
-        <div class="ostep-text">
-          <span data-id><strong>3. Kirim screenshot</strong> tersebut ke WhatsApp kami beserta <strong>nama kamu</strong>, agar kami bantu proses pengirimannya.</span>
-          <span data-en><strong>3. Send the screenshot</strong> to our WhatsApp along with <strong>your name</strong>, so we can assist with the delivery.</span>
-        </div>
-      </div>
-    </div>
-
-    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:20px;">
-      <a class="btn-ongkir" href="https://express.grab.com/delivery-link/qsKkfPhS5mwF" target="_blank">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <span data-id>Cek Ongkir via Grab</span>
-        <span data-en>Check Shipping via Grab</span>
-      </a>
-      <a class="btn-ongkir" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20sudah%20cek%20ongkir%20di%20Grab%2C%20ini%20screenshot-nya.%20Nama%20saya%3A%20" target="_blank" style="background:rgba(37,211,102,.15);border-color:rgba(37,211,102,.5);">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-id>Kirim Screenshot ke WA</span>
-        <span data-en>Send Screenshot to WA</span>
-      </a>
-	  
-	  <div class="ongkir-note">
-      <span class="ni">📋</span>
-      <span data-id>Setelah mengisi data pengiriman di aplikasi Grab, mohon konfirmasi kepada kami melalui WhatsApp dengan menyebutkan <strong style="color:rgba(255,255,255,.85)">nama kamu</strong>, agar kami dapat membantu mengecek ongkos kirimnya.</span>
-	  <span data-en>After filling in the delivery details in the Grab app, please confirm with us via WhatsApp by mentioning <strong style="color:rgba(255,255,255,.85)">your name</strong> , so we can help check the shipping cost.</span>
-    </div>
-	
-    </div>
-  </div>
-</div>
-
-<!-- LAYANAN -->
-<section id="layanan">
-  <div class="stag"><span data-id>Yang kami tawarkan</span><span data-en>What we offer</span></div>
-  <h2 class="stitle"><span data-id>Semua jenis <em>bunga</em> ada di sini</span><span data-en>Every <em>flower</em> you need</span></h2>
-  <div class="layanan-grid">
-    <div class="lcard"><div class="icon">💐</div><div class="lname">Fresh Bouquet</div><div class="ldesc"><span data-id>Buket bunga segar pilihan untuk berbagai momen istimewa.</span><span data-en>Fresh flower bouquets for every special occasion.</span></div></div>
-    <div class="lcard"><div class="icon">🎀</div><div class="lname">Artificial Bouquet</div><div class="ldesc"><span data-id>Bunga artifisial berkualitas, awet dan tidak layu.</span><span data-en>High-quality artificial flowers that last forever.</span></div></div>
-    <div class="lcard"><div class="icon">💵</div><div class="lname">Money Bouquet</div><div class="ldesc"><span data-id>Buket unik dari uang kertas, hadiah cantik sekaligus bermanfaat.</span><span data-en>Unique bouquet made from banknotes — beautiful and useful.</span></div></div>
-    <div class="lcard"><div class="icon">🎁</div><div class="lname">Bloom Box</div><div class="ldesc"><span data-id>Rangkaian bunga dalam box eksklusif, tampil elegan & mewah.</span><span data-en>Elegant flower arrangement in an exclusive box.</span></div></div>
-    <div class="lcard"><div class="icon">🎈</div><div class="lname">Balloon Box</div><div class="ldesc"><span data-id>Kombinasi balon dan bunga dalam box, cocok untuk perayaan.</span><span data-en>Balloon and flower combo in a box, perfect for celebrations.</span></div></div>
-    <div class="lcard"><div class="icon">✨</div><div class="lname">Custom Request</div><div class="ldesc"><span data-id>Warna, jenis bunga, ukuran — semua bisa disesuaikan.</span><span data-en>Color, flower type, size — all fully customizable.</span></div></div>
-  </div>
-</section>
-
-<!-- TIPS PERAWATAN -->
-<section id="care">
-  <div class="stag"><span data-id>Tips dari Kami</span><span data-en>Tips From Us</span></div>
-  <h2 class="stitle"><span data-id>Cara <em>merawat</em> bunga potong</span><span data-en>How to <em>care for</em> cut flowers</span></h2>
-  <p class="ssub" style="max-width:560px;margin:0 auto 40px;text-align:center;">
-    <span data-id>Biar buket kamu tetap segar dan cantik lebih lama, ikuti tips sederhana ini.</span>
-    <span data-en>Follow these simple tips to keep your bouquet fresh and beautiful longer.</span>
-  </p>
-  <div class="care-grid">
-    <div class="care-card">
-      <div class="care-icon">✂️</div>
-      <div class="care-title"><span data-id>Potong Miring Batangnya</span><span data-en>Cut Stems at an Angle</span></div>
-      <div class="care-desc"><span data-id>Potong ±2 cm bagian bawah batang dengan sudut miring agar bunga lebih mudah menyerap air.</span><span data-en>Trim about 2 cm off the stem at an angle so the flower can absorb water more easily.</span></div>
-    </div>
-    <div class="care-card">
-      <div class="care-icon">💧</div>
-      <div class="care-title"><span data-id>Ganti Air Setiap 2 Hari</span><span data-en>Change Water Every 2 Days</span></div>
-      <div class="care-desc"><span data-id>Gunakan air bersih dan ganti secara rutin supaya bunga tidak cepat layu atau berbau.</span><span data-en>Use clean water and change it regularly so the flowers don't wilt or smell too quickly.</span></div>
-    </div>
-    <div class="care-card">
-      <div class="care-icon">🌿</div>
-      <div class="care-title"><span data-id>Bersihkan Daun di Bawah Air</span><span data-en>Remove Leaves Below Water Line</span></div>
-      <div class="care-desc"><span data-id>Buang daun yang terendam air agar tidak membusuk dan mengotori vas.</span><span data-en>Strip off any leaves that sit underwater so they don't rot and contaminate the vase.</span></div>
-    </div>
-    <div class="care-card">
-      <div class="care-icon">☀️</div>
-      <div class="care-title"><span data-id>Hindari Sinar Matahari Langsung</span><span data-en>Avoid Direct Sunlight</span></div>
-      <div class="care-desc"><span data-id>Simpan buket di tempat sejuk, jauh dari sinar matahari langsung dan AC yang terlalu dingin.</span><span data-en>Keep the bouquet somewhere cool, away from direct sunlight and overly cold AC.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- KATA MEREKA -->
-<style>
-#review{background:#fff;padding:80px 6vw;}
-.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:20px;}
-.rcard{background:var(--cream);border:1px solid var(--border);border-radius:16px;padding:20px;transition:transform .2s,box-shadow .2s;}
-.rcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(30,58,95,.1);}
-.rcard.hidden-review{display:none;}
-.rcard-top{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.rcard-avatar{width:40px;height:40px;border-radius:50%;background:var(--rose);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;flex-shrink:0;}
-.rcard-name{font-size:14px;font-weight:500;color:var(--text);}
-.rcard-date{font-size:12px;color:var(--text-light);}
-.rcard-stars{color:#F5A623;font-size:13px;margin-bottom:8px;}
-.rcard-text{font-size:13px;color:var(--text-mid);line-height:1.65;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;}
-.rcard-text.expanded{display:block;}
-.btn-readmore{background:none;border:none;color:var(--rose);font-size:12px;font-weight:500;cursor:pointer;padding:6px 0 0;font-family:'DM Sans',sans-serif;display:block;}
-.btn-readmore:hover{text-decoration:underline;}
-.review-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:4px;}
-.btn-gmaps{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--rose);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:500;text-decoration:none;background:#fff;transition:all .2s;}
-.btn-gmaps:hover{background:var(--rose);color:#fff;border-color:var(--rose);}
-.btn-gmaps svg{width:15px;height:15px;flex-shrink:0;}
-.btn-showmore{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--border2);color:var(--text-mid);padding:10px 20px;border-radius:100px;font-size:13px;font-weight:500;background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;}
-.btn-showmore:hover{border-color:var(--rose);color:var(--rose);}
-</style>
-<section id="review">
-  <div style="margin-bottom:36px;">
-    <div class="stag"><span data-id>Kata Mereka</span><span data-en>What They Say</span></div>
-    <h2 class="stitle"><span data-id>Pelanggan kami <em>berbicara</em></span><span data-en>Our customers <em>speak</em></span></h2>
-    <p class="ssub"><span data-id>Bukan kami yang bilang — tapi mereka yang sudah merasakan sendiri 🌸</span><span data-en>Don't take our word for it — hear it from our customers 🌸</span></p>
-  </div>
-
-  <div class="review-grid" id="review-grid">
-    <!-- 3 tampil awal -->
-    <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">A</div><div><div class="rcard-name">Amanda Solparka</div><div class="rcard-date">7 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r1">Suka banget sama hasil buketnya! 🌸 Dari awal pesan sampai selesai, semuanya super memuaskan. Buket bunganya lucuuuu banget, rapi, dan warna serta susunannya juga pas banget kelihatan estetik nan elegan. Pelayanannya juga top! Kknya super duperrr ramah dan fast respon banget. Pesan hari ini langsung jadi, cepet banget tapi hasilnya tetep bagus. Bener-bener ga nyesel order di sini 🫶</div>
-      <button class="btn-readmore" onclick="toggleReview('r1',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">C</div><div><div class="rcard-name">Christina Devina</div><div class="rcard-date">9 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r2">Ini ke tiga kali nya aku beli bunga disini! Kualitas ketahanan bunganya juara — sempet beli bunga selesai siang tapi baru ketemu temen jam 8 malam, masih fresh dan wangi bunganya. Untuk ide apapun akan diusahain diwujudin. Ketiga bouquet yang aku beli selalu rapih dan cantik hasilnya. Thanks a lot!</div>
-      <button class="btn-readmore" onclick="toggleReview('r2',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard">
-      <div class="rcard-top"><div class="rcard-avatar">F</div><div><div class="rcard-name">Francisca Mifta C</div><div class="rcard-date">9 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r3">Recommended banget! Biar bintang yang berbicara, kalo ada 10 atau 100 aku kasih semuanya!! Aslinya lebih cantik dari yang difoto. Super memuaskan dari service dan kualitas. Gercep dan extra satset banget kakaknya. Semoga makin jaya 🌸</div>
-      <button class="btn-readmore" onclick="toggleReview('r3',this)">Baca selengkapnya</button>
-    </div>
-    <!-- 4 tersembunyi -->
-    <div class="rcard hidden-review">
-      <div class="rcard-top"><div class="rcard-avatar">T</div><div><div class="rcard-name">Tommy Fabiosta</div><div class="rcard-date">6 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r4">Alhamdulillah... setelah pencarian beberapa hari florist yang bisa dipercaya, baik secara harga ataupun hasilnya. Akhirnya saya ketemu di IG bouquet.depok, hasilnya memuaskan sekali dengan harga yang sesuai budget. Terimakasih!</div>
-      <button class="btn-readmore" onclick="toggleReview('r4',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard hidden-review">
-      <div class="rcard-top"><div class="rcard-avatar">E</div><div><div class="rcard-name">Eirene Claudiaa</div><div class="rcard-date">8 bulan lalu · Local Guide</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r5">Good service! Fast response, bisa kasih option sesuai kebutuhan, satset 30 menit kelar trs langsung bisa dipickup grab. Kerennn. Pas nyampe juga rapih banget, ga terlihat sesuatu yang dibuat dadakan. Thank you!</div>
-      <button class="btn-readmore" onclick="toggleReview('r5',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard hidden-review">
-      <div class="rcard-top"><div class="rcard-avatar">V</div><div><div class="rcard-name">Virgilia Rahaded</div><div class="rcard-date">6 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r6">Selalu amazed sama rangkaian bunganya. Gak pernah ragu, sellernya ramah dan pesanan selalu sesuai ekspektasi ❤️ bunga pun juga fresh banget!!!</div>
-      <button class="btn-readmore" onclick="toggleReview('r6',this)">Baca selengkapnya</button>
-    </div>
-    <div class="rcard hidden-review">
-      <div class="rcard-top"><div class="rcard-avatar">A</div><div><div class="rcard-name">Anbar Aisyah Fitri</div><div class="rcard-date">5 bulan lalu</div></div></div>
-      <div class="rcard-stars">★★★★★</div>
-      <div class="rcard-text" id="r7">Deg degan banget karna first time beli disini fresh flowers buat bos, takut bunganya layu — ternyata ngga dong, masih fresh sampai malam! 🌸</div>
-      <button class="btn-readmore" onclick="toggleReview('r7',this)">Baca selengkapnya</button>
-    </div>
-  </div>
-
-  <div class="review-actions">
-    <button class="btn-showmore" id="btn-showmore" onclick="toggleAllReviews(this)">
-      ↓ <span data-id>Lihat semua ulasan</span><span data-en>Show all reviews</span>
-    </button>
-    <a class="btn-gmaps" href="https://www.google.com/maps/place/Lavensia+Florist/@-6.3964984,106.8507423,17z/data=!4m18!1m9!3m8!1s0x2e69ebbd0e179611:0xb100fdf93129bfb5!2sLavensia+Florist!8m2!3d-6.3964984!4d106.8507423!9m1!1b1!16s%2Fg%2F11x79mrpfv!3m7!1s0x2e69ebbd0e179611:0xb100fdf93129bfb5!8m2!3d-6.3964984!4d106.8507423!9m1!1b1!16s%2Fg%2F11x79mrpfv?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-      <span data-id>Lihat ulasan lainnya</span><span data-en>See more reviews</span>
-    </a>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="stag"><span data-id>Pertanyaan Umum</span><span data-en>Common Questions</span></div>
-  <h2 class="stitle"><span data-id>Masih ada yang <em>ditanyakan?</em></span><span data-en>Still have <em>questions?</em></span></h2>
-  <div class="faq-wrap" style="margin-top:36px;">
-
-    <div class="faq-group">
-      <div class="faq-group-title"><span data-id>Pemesanan &amp; Pembayaran</span><span data-en>Ordering &amp; Payment</span></div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Bagaimana cara pesan bunga di Lavensia Florist?</span><span data-en>How do I order flowers at Lavensia Florist?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Klik tombol "Order WA", lalu chat kami untuk pilih produk, warna, dan tanggal pengiriman. 🌸</span><span data-en>Tap the "Order WA" button, then chat with us to choose the product, colors, and delivery date. 🌸</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah bisa pesan langsung / datang ke toko?</span><span data-en>Can I order in person / visit the store directly?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa banget! Kamu boleh datang langsung ke toko untuk lihat dan pilih bunga, atau chat WA dulu biar pesanan sudah siap saat kamu tiba. 😊</span><span data-en>Of course! You're welcome to visit our store directly to see and pick your flowers, or chat us on WhatsApp first so your order is ready when you arrive. 😊</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span>Metode pembayaran apa saja yang diterima?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Transfer Bank BRI &amp; BCA, QRIS, atau ShopeePay Later.</span><span data-en>Bank transfer (BRI &amp; BCA), QRIS, or ShopeePay Later.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah bisa request warna atau jenis bunga tertentu?</span><span data-en>Can I request a specific color or flower type?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa banget! Cek layanan Custom Request kami — warna, jenis bunga, dan ukuran semua bisa disesuaikan. ✨</span><span data-en>Absolutely! Check out our Custom Request service — color, flower type, and size are all customizable. ✨</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Berapa lama proses pembuatan buket?</span><span data-en>How long does it take to make a bouquet?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Rata-rata 30 menit hingga beberapa jam, tergantung tingkat kerumitan. Kami info estimasi waktunya saat chat WA.</span><span data-en>On average 30 minutes to a few hours, depending on complexity. We'll share the estimated time when you chat with us on WhatsApp.</span></div></div>
-      </div>
-    </div>
-
-    <div class="faq-group">
-      <div class="faq-group-title"><span data-id>Pengiriman</span><span data-en>Delivery</span></div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah bisa same-day delivery / pesan hari ini sampai hari ini?</span><span data-en>Is same-day delivery available?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa, selama order dilakukan maksimal jam 16.00 WIB.</span><span data-en>Yes, as long as you order by 4:00 PM WIB at the latest.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Area pengiriman mencakup mana saja?</span><span data-en>What areas do you deliver to?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Depok dan sekitarnya, terjangkau via Grab Express. Cek estimasi ongkir di bagian "Cek Ongkir" pada halaman ini.</span><span data-en>Depok and surrounding areas, reachable via Grab Express. Check the shipping estimate in the "Check Shipping Cost" section on this page.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Bagaimana cara cek ongkos kirim?</span><span data-en>How do I check the shipping cost?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Gunakan tombol "Cek Ongkir" di web, lalu kirim screenshot hasilnya via WhatsApp.</span><span data-en>Use the "Check Shipping" button on the site, then send us a screenshot of the result via WhatsApp.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah bisa ambil sendiri (pickup) di toko?</span><span data-en>Can I pick up my order at the store?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Bisa. Alamat toko tersedia di bagian Informasi Toko / Google Maps di bawah.</span><span data-en>Yes. The store address is available in the Store Information / Google Maps section below.</span></div></div>
-      </div>
-    </div>
-
-    <div class="faq-group">
-      <div class="faq-group-title"><span data-id>Produk</span><span data-en>Products</span></div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah bunga yang dikirim sesuai dengan foto?</span><span data-en>Will the flowers match the photos?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Kami usahakan semirip mungkin. Karena bunga alami, warna dan kondisinya bisa sedikit bervariasi tergantung ketersediaan.</span><span data-en>We aim to keep them as close as possible. Since these are natural flowers, colors and condition may vary slightly depending on availability.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Berapa lama bunga segar bisa bertahan?</span><span data-en>How long do fresh flowers last?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Umumnya 2–4 hari, tergantung jenis bunga dan cara penyimpanannya.</span><span data-en>Typically 2–4 days, depending on the flower type and how it's stored.</span></div></div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          <span><span data-id>Apakah tersedia bunga artifisial yang tidak layu?</span><span data-en>Do you offer artificial flowers that never wilt?</span></span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-a"><div class="faq-a-inner"><span data-id>Ya, cek kategori Artificial Bouquet di bagian Layanan kami — awet dan tidak layu.</span><span data-en>Yes, check out our Artificial Bouquet category in the Services section — long-lasting and never wilts.</span></div></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- KONTAK -->
-<section id="info">
-  <div class="info-wrap">
-    <div>
-      <div class="stag"><span data-id>Informasi toko</span><span data-en>Store information</span></div>
-      <div class="iblock">
-        <div class="ilabel"><span data-id>Alamat</span><span data-en>Address</span></div>
-        <div class="ival">Jl. Merdeka Raya No.19, Abadijaya<br/>Kec. Sukmajaya, Kota Depok 16417</div>
-        <a class="btn-maps" href="https://maps.app.goo.gl/q4aGJihunSBLZu6q6" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span data-id>Buka di Google Maps</span><span data-en>Open in Google Maps</span>
-        </a>
-      </div>
-      <div class="iblock">
-        <div class="ilabel"><span data-id>Jam buka</span><span data-en>Opening hours</span></div>
-        <div class="ival"><span data-id>Senin – Sabtu · 08.00 – 17.00 WIB</span><span data-en>Monday – Saturday · 08:00 – 17:00 WIB</span></div>
-      </div>
-      <div class="iblock">
-        <div class="ilabel">WhatsApp</div>
-        <div class="ival"><a href="https://wa.me/6281243043054" target="_blank">+62 812-4304-3054</a></div>
-      </div>
-      <div class="iblock">
-        <div class="ilabel">Instagram</div>
-        <div class="ival"><a href="https://www.instagram.com/lavensia.florist/" target="_blank">@lavensia.florist</a></div>
-      </div>
-	  <div class="iblock">
-        <div class="ilabel">Tiktok</div>
-        <div class="ival"><a href="https://www.tiktok.com/@lavensia.florist" target="_blank">@lavensia.florist</a></div>
-      </div>
-      <div class="iblock">
-        <div class="ilabel"><span data-id>Metode Pembayaran</span><span data-en>Payment Methods</span></div>
-        <div class="pay-badges">
-          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10M20 21V10M2 10l10-7 10 7M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>Bank BRI</span>
-          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M4 21V10M20 21V10M2 10l10-7 10 7M6 10v11M10 10v11M14 10v11M18 10v11"/></svg></span>Bank BCA</span>
-          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20v.01"/></svg></span>QRIS</span>
-          <span class="pay-badge"><span class="pico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span>ShopeePay Later</span>
-        </div>
-      </div>
-    </div>
-    <div class="info-cta">
-      <h2>
-        <span data-id>Siap pesan<br/>bunga <em>impianmu?</em></span>
-        <span data-en>Ready to order<br/>your <em>dream bouquet?</em></span>
-      </h2>
-      <p>
-        <span data-id>Chat kami di WhatsApp — ceritakan momennya dan kami bantu pilihkan bunga yang paling pas.</span>
-        <span data-en>Chat us on WhatsApp — tell us the occasion and we'll help you choose the perfect flowers.</span>
-      </p>
-      <a class="btn-wa-big" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        <span data-id>Chat WhatsApp Sekarang</span><span data-en>Chat on WhatsApp Now</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <strong>Lavensia Florist</strong><br/>
-  Jl. Merdeka Raya No.19, Abadijaya, Kec. Sukmajaya, Kota Depok 16417<br/>
-  <a href="https://www.instagram.com/lavensia.florist/" target="_blank">IG @lavensia.florist</a> &nbsp;·&nbsp;
-  <a href="https://www.tiktok.com/@lavensia.florist" target="_blank">TIKTOK @lavensia.florist</a>
-  <a href="https://wa.me/6281243043054" target="_blank">+62 812-4304-3054</a><br/><br/>
-  <span style="font-size:12px;opacity:.4;">© 2019 Lavensia Florist · Made with 🌸</span>
-</footer>
-
-<!-- FLOATING WA -->
-<a class="wa-float" href="https://wa.me/6281243043054?text=Halo%20Lavensia%20Florist!%20Saya%20mau%20pesan%20bunga%20%F0%9F%8C%B8" target="_blank" title="Chat WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<!-- FLOATING MUSIC -->
-<a class="music-float" id="music-btn" onclick="toggleMusic()" title="Play Music">
-  🔇
-</a>
-
-<audio id="bg-music" loop>
-  <source src="lagu1.mp3" type="audio/mpeg">
-</audio>
-
-
 
 <script>
-// ── INIT SLIDERS ──
-document.querySelectorAll('.card[data-images]').forEach(card => {
-  let images;
-  try { images = JSON.parse(card.getAttribute('data-images')); } catch(e) { return; }
-  if (!images.length) return;
-
-  const slidesEl = card.querySelector('.slides');
-  const dotsEl   = card.querySelector('.slider-dots');
-  const countEl  = card.querySelector('.slide-count');
-  const prevBtn  = card.querySelector('.slider-btn.prev');
-  const nextBtn  = card.querySelector('.slider-btn.next');
-  let cur = 0;
-
-  // Build slides & dots
-  images.forEach((src, i) => {
-    const slide = document.createElement('div');
-    slide.className = 'slide';
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = 'Foto produk ' + (i + 1);
-    img.loading = 'lazy';
-    slide.appendChild(img);
-    slidesEl.appendChild(slide);
-
-    const dot = document.createElement('button');
-    dot.className = 'sdot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => goTo(i));
-    dotsEl.appendChild(dot);
-  });
-
-  // Hide controls if only 1 image
-  if (images.length === 1) {
-    prevBtn.style.display = nextBtn.style.display = 'none';
-    dotsEl.style.display = 'none';
-    countEl.style.display = 'none';
-  }
-
-  function goTo(idx) {
-    cur = (idx + images.length) % images.length;
-    const sliderWidth = card.querySelector('.slider').offsetWidth;
-    slidesEl.style.transform = `translateX(-${cur * sliderWidth}px)`;
-    dotsEl.querySelectorAll('.sdot').forEach((d, i) => d.classList.toggle('active', i === cur));
-    countEl.textContent = `${cur + 1} / ${images.length}`;
-  }
-
-  prevBtn.addEventListener('click', e => { e.stopPropagation(); goTo(cur - 1); });
-  nextBtn.addEventListener('click', e => { e.stopPropagation(); goTo(cur + 1); });
-
-  // Touch swipe
-  let startX = 0;
-  const slider = card.querySelector('.slider');
-  slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, {passive: true});
-  slider.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) goTo(dx < 0 ? cur + 1 : cur - 1);
-  }, {passive: true});
-
-  goTo(0);
-});
-
-// ── REVIEW ──
-function toggleReview(id, btn) {
-  const el = document.getElementById(id);
-  const expanded = el.classList.toggle('expanded');
-  btn.textContent = expanded ? 'Sembunyikan' : 'Baca selengkapnya';
-}
-
-function toggleAllReviews(btn) {
-  const hidden = document.querySelectorAll('.hidden-review');
-  const isHidden = hidden[0].style.display === 'none' || hidden[0].style.display === '';
-  hidden.forEach(el => el.style.display = isHidden ? 'block' : 'none');
-  const idSpan = btn.querySelector('[data-id]');
-  const enSpan = btn.querySelector('[data-en]');
-  if (idSpan) idSpan.textContent = isHidden ? 'Sembunyikan' : 'Lihat semua ulasan';
-  if (enSpan) enSpan.textContent = isHidden ? 'Hide' : 'Show all reviews';
-  btn.querySelector('span:first-child').textContent = isHidden ? '↑' : '↓';
-}
-
-// ── PROMO POPUP ──
-(function () {
-  var promoExpiry = new Date('2026-08-21T00:00:00+07:00'); // expired setelah 20 Agustus 2026
-  var now = new Date();
-  if (now >= promoExpiry) return; // promo sudah lewat, tidak tampilkan
-
-  if (sessionStorage.getItem('promoShown')) return; // sudah muncul sesi ini
-
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      var overlay = document.getElementById('promoOverlay');
-      if (overlay) {
-        overlay.classList.add('show');
-        sessionStorage.setItem('promoShown', '1');
-      }
-    }, 900);
-  });
-})();
-
-function closePromo() {
-  var overlay = document.getElementById('promoOverlay');
-  if (overlay) overlay.classList.remove('show');
-}
-
-document.addEventListener('click', function (e) {
-  var overlay = document.getElementById('promoOverlay');
-  if (overlay && e.target === overlay) closePromo();
-});
-
-// ── FAQ ──
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const answer = item.querySelector('.faq-a');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => {
-    if (el !== item) {
-      el.classList.remove('open');
-      el.querySelector('.faq-a').style.maxHeight = null;
-    }
-  });
-  if (isOpen) {
-    item.classList.remove('open');
-    answer.style.maxHeight = null;
-  } else {
-    item.classList.add('open');
-    answer.style.maxHeight = answer.scrollHeight + 'px';
-  }
-}
-
-// ── PETALS ──
-const wrap = document.getElementById('petals');
-for(let i=0;i<20;i++){
-  const p=document.createElement('div');
-  p.className='petal';
-  p.style.cssText=`left:${Math.random()*100}%;width:${6+Math.random()*7}px;height:${8+Math.random()*10}px;background:${Math.random()>.5?'#C8D8EE':'#F2C6C2'};animation-duration:${7+Math.random()*8}s;animation-delay:${Math.random()*12}s`;
-  wrap.appendChild(p);
-}
-
-// ── LANG TOGGLE ──
-function setLang(lang) {
-  document.body.classList.toggle('en', lang === 'en');
-  document.getElementById('btn-id').classList.toggle('active', lang === 'id');
-  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  localStorage.setItem('lv_lang', lang);
-}
-// restore saved lang
-const saved = localStorage.getItem('lv_lang');
-if (saved === 'en') setLang('en');
-
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
-  });
-});
-
-// --- music
-const music = document.getElementById("bg-music");
-let isPlaying = false;
-
-function toggleMusic() {
-  const btn = document.getElementById('music-btn');
-  if (music.paused) {
-    music.play();
-    isPlaying = true;
-    btn.textContent = '🔇';
-  } else {
-    music.pause();
-    isPlaying = false;
-    btn.textContent = '🎵';
-  }
-}
-
-// Pause saat pindah app / keluar browser, lanjut saat balik
-document.addEventListener('visibilitychange', () => {
-  if (!music) return;
-  if (document.hidden) {
-    music.pause();
-  } else {
-    if (isPlaying) music.play();
-  }
-});
-
-// ── PRICELIST MODAL ──
-const PDF_LINKS = [
-  'https://drive.google.com/file/d/1QUT1OLkT1cRWXVonbX76SIBAlkqHtuxV/preview',
-  'https://drive.google.com/file/d/1PlxLxg1-WXIQKBOR4gdO5SfB-MnDBfYl/preview',
-  'https://drive.google.com/file/d/12LvklCPzOr-5eXKmWQzieO2i7C0YqUWH/preview'
+const URL_SCRIPT = 'https://script.google.com/macros/s/AKfycbwK4JxWSGq4K843Tmo6499HKDSjN5FAf0O0Sk4ifbKNrycDwwDKqoIITNJSqYN-T02e/exec';
+const KUNCI = 'absen';
+let DAFTAR_NAMA = [
+  'INTAN NURAINI PUTRI SUDRAJAT',
+  'ALFIA RINJANI',
+  'TRI RISKA DEWI',
+  'CHANTIKA NOVI DEVANTI'
 ];
 
-let pdfLoaded = [false, false];
+const $ = id => document.getElementById(id);
+const NAMA_JENIS = {CUTI:'Cuti', IZIN:'Izin', SAKIT:'Sakit'};
+let tab = 'absen', terpilih = '', status = null, fotoData = '', sedangKirim = false, baris = [];
 
-function openPricelist() {
-  const modal = document.getElementById('pricelist-modal');
-  modal.classList.add('open');
+/* ---------- jam & tanggal ---------- */
+function hariIniStr(){ return new Date().toLocaleDateString('sv-SE',{timeZone:'Asia/Jakarta'}); }
+function tick(){
+  const n = new Date();
+  $('jam').textContent = n.toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jakarta'}).replace('.',':');
+  $('tgl').textContent = n.toLocaleDateString('id-ID',{weekday:'long',day:'numeric',month:'long',year:'numeric',timeZone:'Asia/Jakarta'});
+}
+tick(); setInterval(tick, 10000);
 
-  // iOS fix: simpan posisi scroll lalu lock body
-  const scrollY = window.scrollY;
-  document.body.dataset.scrollY = scrollY;
-  document.body.style.position = 'fixed';
-  document.body.style.top = `-${scrollY}px`;
-  document.body.style.left = '0';
-  document.body.style.right = '0';
-  document.body.style.width = '100%';
+function setTanggalCuti(){
+  const t = hariIniStr();
+  const d = new Date(t + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + 365);
+  const maks = d.toISOString().slice(0,10);
+  $('tglCuti').min = t; $('tglCuti').max = maks;
+  if(!$('tglCuti').value) $('tglCuti').value = t;
+}
+setTanggalCuti();
 
-  if (!pdfLoaded[0]) {
-    document.getElementById('pdf-0').src = PDF_LINKS[0];
-    pdfLoaded[0] = true;
+/* ---------- tab ---------- */
+function setTab(t){
+  tab = t;
+  $('tabAbsen').classList.toggle('aktif', t==='absen');
+  $('tabCuti').classList.toggle('aktif', t==='cuti');
+  $('panelAbsen').classList.toggle('hidden', t!=='absen');
+  $('panelCuti').classList.toggle('hidden', t!=='cuti');
+  $('pesan').className = 'pesan';
+  ubahTombol();
+  if(t==='cuti' && terpilih && $('pin').value.length === 4) muatStatus();
+}
+$('tabAbsen').onclick = () => setTab('absen');
+$('tabCuti').onclick = () => setTab('cuti');
+
+/* ---------- daftar nama ---------- */
+function statusDariBaris(nama){
+  const r = baris.filter(x => x.nama.toLowerCase() === nama.toLowerCase()).pop();
+  if(!r) return null;
+  if(NAMA_JENIS[r.masuk]) return r.cuti === 'Menunggu' ? ['cuti', NAMA_JENIS[r.masuk]+' menunggu'] : ['cuti', NAMA_JENIS[r.masuk]];
+  if(r.pulang) return ['selesai','Selesai'];
+  return ['masuk','Sudah masuk'];
+}
+function gambarNama(){
+  $('pilihNama').innerHTML = '<option value="">Pilih nama…</option>' + DAFTAR_NAMA.map(n => {
+    const st = statusDariBaris(n);
+    return '<option value="'+n+'"'+(n===terpilih?' selected':'')+'>'+n+(st?'  ('+st[1]+')':'')+'</option>';
+  }).join('');
+}
+$('pilihNama').onchange = e => {
+  const n = e.target.value;
+  if(!n){ terpilih = ''; status = null; $('pin').value = ''; $('info').className = 'info hidden'; $('infoCuti').className = 'info hidden'; ubahTombol(); return; }
+  pilihNama(n);
+};
+
+async function pilihNama(n){
+  if(!sudahMintaLokasi){ sudahMintaLokasi = true; ambilLokasi(); }
+  terpilih = n; status = null; $('pilihNama').value = n;
+  try{ localStorage.setItem('absen_nama', n); $('pin').value = localStorage.getItem('absen_pin_'+n) || ''; }catch(e){ $('pin').value = ''; }
+  $('infoCuti').className = 'info hidden'; $('daftarCuti').className = 'hidden';
+  $('pesan').className = 'pesan';
+  ubahTombol();
+  await muatStatus();
+}
+
+function gambarDaftarCuti(list){
+  const el = $('daftarCuti');
+  if(!list.length){ el.className = 'hidden'; el.innerHTML = ''; return; }
+  const kelas = {Disetujui:'masuk', Ditolak:'cuti'};
+  el.innerHTML = '<span class="judul" style="margin:0 0 4px">Catatan kamu</span>' + list.map(c => {
+    const t = new Date(c.tanggal + 'T00:00:00Z').toLocaleDateString('id-ID',{weekday:'short',day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+    return '<div class="cutiBaris"><span>'+esc(c.jenis||'Cuti')+' · '+t+'</span><span class="chip st '+(kelas[c.status]||'')+'">'+esc(c.status)+'</span></div>';
+  }).join('');
+  el.className = '';
+}
+
+async function muatStatus(){
+  const n = terpilih, pin = $('pin').value.trim();
+  if(!n) return;
+  status = null; ubahTombol();
+  if(pin.length < 4){ $('info').className = 'info'; $('info').textContent = 'Masukkan PIN kamu.'; return; }
+  $('info').className = 'info'; $('info').textContent = 'Mengecek status…';
+  try{
+    const h = await kirim({aksi:'status', nama:n});
+    if(!h.ok){ const er = new Error(h.error || 'gagal'); er.server = true; throw er; }
+    if(terpilih !== n) return;
+    status = h;
+    try{ localStorage.setItem('absen_pin_'+n, pin); }catch(e){}
+    let t = '';
+    if(h.status==='masuk') t = 'Belum absen hari ini. Kirim akan tercatat sebagai absen masuk.';
+    if(h.status==='pulang') t = 'Sudah masuk pukul ' + h.jamMasuk + '. Kirim akan tercatat sebagai absen pulang.';
+    if(h.status==='selesai') t = 'Absen hari ini sudah lengkap (masuk ' + (h.jamMasuk||'-') + ', pulang ' + h.jamPulang + ').';
+    if(h.status==='cuti') t = 'Hari ini tercatat ' + (h.jenis||'cuti').toLowerCase() + '.';
+    $('info').textContent = t;
+    $('infoCuti').textContent = 'Tahun ini: cuti ' + h.cutiTahunIni + ' hari · izin ' + (h.izinTahunIni||0) + ' hari · sakit ' + (h.sakitTahunIni||0) + ' hari.' + (h.cutiMenunggu ? ' Menunggu persetujuan: ' + h.cutiMenunggu + ' hari.' : '');
+    $('infoCuti').className = 'info';
+    gambarDaftarCuti(h.cutiDaftar || []);
+  }catch(e){
+    if(e.server){
+      $('info').textContent = e.message;
+      if(e.message === 'PIN salah'){ try{ localStorage.removeItem('absen_pin_'+n); }catch(x){} }
+    } else {
+      $('info').textContent = 'Status belum bisa dimuat (' + (e && e.message ? e.message : 'tidak ada koneksi') + '). Ketuk nama lagi untuk mencoba ulang.';
+    }
   }
+  ubahTombol();
 }
 
-function closePricelist() {
-  const modal = document.getElementById('pricelist-modal');
-  modal.classList.remove('open');
+$('pin').oninput = () => {
+  $('pin').value = $('pin').value.replace(/\D/g,'').slice(0,4);
+  if(terpilih && $('pin').value.length === 4) muatStatus();
+  else if(terpilih){ status = null; ubahTombol(); }
+};
 
-  // iOS fix: restore scroll setelah modal benar-benar hidden (visibility:hidden butuh 1 frame)
-  const scrollY = parseInt(document.body.dataset.scrollY || '0');
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.left = '';
-  document.body.style.right = '';
-  document.body.style.width = '';
+function teksTombolJenis(){
+  const j = $('jenis').value;
+  return j === 'Sakit' ? 'Catat sakit' : j === 'Izin' ? 'Ajukan izin' : 'Ajukan cuti';
+}
+$('jenis').onchange = () => ubahTombol();
 
-  // requestAnimationFrame pastikan DOM update dulu sebelum scroll restore
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY);
-    });
-  });
+function ubahTombol(){
+  const a = $('kirimAbsen'), c = $('kirimCuti');
+  if(sedangKirim) return;
+  if(!terpilih){ a.disabled = c.disabled = true; a.textContent = c.textContent = 'Pilih nama dulu'; return; }
+  if(!status){ a.disabled = true; a.textContent = $('pin').value.length < 4 ? 'Masukkan PIN dulu' : 'Memuat status…'; c.disabled = true; c.textContent = 'Masukkan PIN dulu'; return; }
+  c.disabled = false; c.textContent = teksTombolJenis();
+  if(status.status==='masuk'){ a.disabled = false; a.textContent = 'Kirim absen masuk'; }
+  else if(status.status==='pulang'){ a.disabled = false; a.textContent = 'Kirim absen pulang'; }
+  else { a.disabled = true; a.textContent = status.status==='cuti' ? 'Hari ini ' + (status.jenis||'cuti').toLowerCase() : 'Absen hari ini sudah lengkap'; }
 }
 
-function closePricelistOutside(e) {
-  if (e.target.id === 'pricelist-modal') closePricelist();
+/* ---------- foto ---------- */
+function prosesGambar(src, w, h){
+  const sk = Math.min(1, 720 / Math.max(w, h));
+  const c = document.createElement('canvas');
+  c.width = Math.round(w * sk); c.height = Math.round(h * sk);
+  c.getContext('2d').drawImage(src, 0, 0, c.width, c.height);
+  fotoData = c.toDataURL('image/jpeg', 0.7);
+  $('kotakFoto').innerHTML = '<img alt="Foto selfie" src="'+fotoData+'">';
 }
 
-function switchPdf(idx, btn) {
-  document.querySelectorAll('.mtab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.pdf-frame').forEach(f => f.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('pdf-' + idx).classList.add('active');
-  if (!pdfLoaded[idx]) {
-    document.getElementById('pdf-' + idx).src = PDF_LINKS[idx];
-    pdfLoaded[idx] = true;
+$('ambilFoto').onchange = e => {
+  const f = e.target.files[0];
+  if(!f) return;
+  const img = new Image();
+  const url = URL.createObjectURL(f);
+  img.onload = () => { prosesGambar(img, img.width, img.height); URL.revokeObjectURL(url); };
+  img.src = url;
+};
+
+// Laptop/PC: buka webcam langsung. HP: tetap kamera depan lewat input file.
+let streamKamera = null;
+function tutupKamera(){
+  if(streamKamera){ streamKamera.getTracks().forEach(t => t.stop()); streamKamera = null; }
+  $('kamera').classList.add('hidden');
+}
+$('kotakFoto').addEventListener('click', async e => {
+  const desktop = !window.matchMedia('(pointer:coarse)').matches;
+  if(!desktop || !(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) return; // pakai input file
+  e.preventDefault();
+  try{
+    streamKamera = await navigator.mediaDevices.getUserMedia({video:{facingMode:'user'}, audio:false});
+    $('vid').srcObject = streamKamera;
+    $('kamera').classList.remove('hidden');
+  }catch(err){
+    tampilPesan('Kamera tidak bisa dibuka. Izinkan akses kamera di browser, lalu coba lagi.', 'err');
   }
-}
-
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closePricelist(); });
-
-// ── MOBILE NAV TOGGLE ──
-function toggleMobileNav() {
-  const nav = document.querySelector('.nav-links');
-  const btn = document.getElementById('nav-hamburger');
-  nav.classList.toggle('open');
-  btn.classList.toggle('open');
-}
-// Tutup mobile nav saat klik link
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.remove('open');
-    document.getElementById('nav-hamburger').classList.remove('open');
-  });
 });
-</script>
+$('jepret').onclick = () => {
+  const v = $('vid');
+  if(!v.videoWidth) return;
+  prosesGambar(v, v.videoWidth, v.videoHeight);
+  tutupKamera();
+};
+$('batalKamera').onclick = tutupKamera;
 
-<!-- PRICELIST MODAL HTML -->
-<div class="modal-overlay" id="pricelist-modal" onclick="closePricelistOutside(event)">
-  <div class="modal-box">
-    <div class="modal-head">
-      <h3>📋 Pricelist Lavensia Florist</h3>
-      <button class="modal-close" onclick="closePricelist()">✕</button>
-    </div>
-    <div class="modal-tabs">
-      <button class="mtab active" onclick="switchPdf(0, this)">📄 Pricelist Bouquet Depok</button>
-      <button class="mtab" onclick="switchPdf(1, this)">📄 Pricelist Fresh Flowers</button>
-	  <button class="mtab" onclick="switchPdf(2, this)">📄 BEST 2025 Fresh Flowers</button>
-    </div>
-    <div class="modal-body">
-      <div class="pdf-loading" id="pdf-loading-0">
-        <div class="spin"></div>
-        <span>Memuat pricelist...</span>
-      </div>
-      <iframe class="pdf-frame active" id="pdf-0" src="" onload="document.getElementById('pdf-loading-0').style.display='none'"></iframe>
-      
-	  <div class="pdf-loading" id="pdf-loading-1" style="display:none">
-        <div class="spin"></div>
-        <span>Memuat pricelist...</span>
-      </div>
-      <iframe class="pdf-frame" id="pdf-1" src="" onload="document.getElementById('pdf-loading-1').style.display='none'"></iframe>
-	  
-	  <div class="pdf-loading" id="pdf-loading-2" style="display:none">
-        <div class="spin"></div>
-        <span>Memuat pricelist...</span>
-      </div>
-      <iframe class="pdf-frame" id="pdf-2" src="" onload="document.getElementById('pdf-loading-2').style.display='none'"></iframe>
-    </div>
-  </div>
-</div>
+function ambilLokasi(){
+  return new Promise(res => {
+    if(!navigator.geolocation) return res({err:'tidak_didukung'});
+    const ok = p => res({lat:p.coords.latitude, lng:p.coords.longitude});
+    const gagal = e => res({err: e.code === 1 ? 'ditolak' : (e.code === 3 ? 'timeout' : 'tidak_tersedia')});
+    // 1) cepat: lokasi dari Wi-Fi/jaringan (boleh hasil beberapa menit terakhir)
+    navigator.geolocation.getCurrentPosition(ok, e => {
+      if(e.code === 1) return gagal(e);
+      // 2) lambat tapi akurat: GPS satelit, beri waktu lebih lama
+      navigator.geolocation.getCurrentPosition(ok, gagal, {enableHighAccuracy:true, timeout:25000, maximumAge:0});
+    }, {enableHighAccuracy:false, timeout:8000, maximumAge:120000});
+  });
+}
+const PESAN_LOKASI = {
+  ditolak: 'Izin lokasi ditolak. Buka Pengaturan HP > Aplikasi (atau Chrome/Safari) > Izin > Lokasi > Izinkan, lalu buka aplikasi lagi.',
+  timeout: 'Lokasi belum didapat (sudah dicoba 30 detik). Pastikan Lokasi HP menyala, dekati jendela atau area terbuka, tunggu sebentar, lalu coba lagi.',
+  tidak_tersedia: 'Lokasi HP belum menyala. Nyalakan Lokasi (GPS) di pengaturan HP, lalu coba lagi.',
+  tidak_didukung: 'Browser ini tidak mendukung lokasi. Buka lewat Chrome atau Safari, jangan dari dalam WhatsApp atau Instagram.'
+};
+let sudahMintaLokasi = false;
+
+function tampilPesan(teks, jenis){ const p = $('pesan'); p.textContent = teks; p.className = 'pesan ' + jenis; }
+
+async function kirim(post){
+  const r = await fetch(URL_SCRIPT, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(Object.assign({kunci:KUNCI, pin:$('pin').value.trim()}, post))});
+  return r.json();
+}
+
+/* ---------- kirim absen ---------- */
+$('kirimAbsen').onclick = async () => {
+  if(!terpilih || !status) return;
+  if(!fotoData) return tampilPesan('Ambil foto selfie dulu.', 'err');
+  const aksi = status.status;
+  sedangKirim = true; $('kirimAbsen').disabled = true; $('kirimAbsen').textContent = 'Mengirim…';
+  $('pesan').className = 'pesan';
+  $('lokasi').className = 'lokasi'; $('lokasi').textContent = 'Mengecek lokasi…';
+  const pos = await ambilLokasi();
+  if(pos.err){
+    $('lokasi').className = 'lokasi gagal'; $('lokasi').textContent = 'Lokasi tidak terdeteksi.';
+    tampilPesan(PESAN_LOKASI[pos.err] || 'Lokasi wajib aktif untuk absen.', 'err');
+    sedangKirim = false; ubahTombol();
+    return;
+  }
+  $('lokasi').className = 'lokasi ok'; $('lokasi').textContent = 'Lokasi terdeteksi.';
+  try{
+    const h = await kirim({aksi, nama:terpilih, foto:fotoData, lat:pos.lat, lng:pos.lng});
+    if(h.ok){
+      tampilPesan('Absen ' + aksi + ' tercatat pukul ' + h.jam + '. Terima kasih!', 'ok');
+      fotoData = ''; $('ambilFoto').value = '';
+      $('kotakFoto').innerHTML = '<span>Ketuk untuk foto selfie</span><small>Kamera depan akan terbuka</small>';
+      sedangKirim = false;
+      await muatHariIni();
+      await pilihNama(terpilih);
+      return;
+    } else tampilPesan(h.error || 'Gagal menyimpan.', 'err');
+  }catch(e){ tampilPesan('Tidak bisa terhubung. Cek internet lalu coba lagi.', 'err'); }
+  sedangKirim = false; ubahTombol();
+};
+
+/* ---------- ajukan cuti ---------- */
+$('kirimCuti').onclick = async () => {
+  if(!terpilih) return;
+  const dari = $('tglCuti').value, sampai = dari;
+  if(!dari) return tampilPesan('Pilih tanggal dulu.', 'err');
+  sedangKirim = true; $('kirimCuti').disabled = true; $('kirimCuti').textContent = 'Mengirim…';
+  $('pesan').className = 'pesan';
+  try{
+    const jenis = $('jenis').value;
+    const h = await kirim({aksi:'cuti', nama:terpilih, dari, sampai, jenis});
+    if(h.ok){
+      tampilPesan(h.menunggu ? 'Pengajuan ' + jenis.toLowerCase() + ' tanggal ' + dari + ' terkirim dan menunggu persetujuan.' : 'Sakit tanggal ' + dari + ' tercatat. Semoga lekas sembuh!', 'ok');
+      sedangKirim = false;
+      await muatHariIni();
+      await pilihNama(terpilih);
+      return;
+    } else tampilPesan(h.error || 'Gagal menyimpan.', 'err');
+  }catch(e){ tampilPesan('Tidak bisa terhubung. Cek internet lalu coba lagi.', 'err'); }
+  sedangKirim = false; ubahTombol();
+};
+
+/* ---------- daftar hari ini ---------- */
+async function muatHariIni(){
+  try{
+    const h = await kirim({aksi:'hariini'});
+    if(!h.ok) throw 0;
+    baris = h.rows;
+    $('hariIni').innerHTML = baris.length
+      ? baris.map(r => '<div class="baris"><span>'+esc(r.nama)+'</span><span class="w">'+(NAMA_JENIS[r.masuk] ? (r.cuti==='Menunggu' ? NAMA_JENIS[r.masuk]+' (menunggu)' : NAMA_JENIS[r.masuk]) : 'masuk '+(r.masuk||'-')+' · pulang '+(r.pulang||'-'))+'</span></div>').join('')
+      : '<div class="kosong">Belum ada yang absen hari ini.</div>';
+  }catch(e){ $('hariIni').innerHTML = '<div class="kosong">Daftar belum bisa dimuat.</div>'; }
+  gambarNama();
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+gambarNama();
+(async () => {
+  try{ const h = await kirim({aksi:'daftar'}); if(h.ok && h.nama.length) DAFTAR_NAMA = h.nama; }catch(e){}
+  await muatHariIni();
+  try{ const n = localStorage.getItem('absen_nama'); if(n && DAFTAR_NAMA.indexOf(n) >= 0) pilihNama(n); }catch(e){}
+})();
+</script>
 </body>
 </html>
